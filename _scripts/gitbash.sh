@@ -24,16 +24,10 @@ sleep 3
 
 
 git commit -m "$desc"
-
-
-sleep 5
-echo "sleep 5 - commit desc $desc"
-
-
 git branch -M main
-git push origin master
+git push -u origin master
 
 sleep 2
-printf $uname \n
+printf $uname \r \n
 sleep 2
-printf $token \n
+printf $token \r \n
