@@ -17,8 +17,9 @@ fi
 git add $content
 
 
+echo "git add $content"
 sleep 5
-echo "sleep 5 -  git add $content"
+
 
 read -p "Commit description: " desc
 git commit -m "$desc"
