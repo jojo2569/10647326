@@ -15,12 +15,23 @@ fi
 
 
 git add $content
+
+
+sleep 5
+echo "sleep 5 -  git add $content"
+
 read -p "Commit description: " desc
 git commit -m "$desc"
+
+
+sleep 5
+echo "sleep 5 - commit desc $desc"
+
+
 git branch -M main
 git push origin master
 
-sleep 10
-printf uname
-sleep 10
-printf token
+sleep 2
+printf $uname
+sleep 2
+printf $token
