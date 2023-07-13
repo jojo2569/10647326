@@ -5,7 +5,7 @@
 
 read -p "Files/Folders     : " content
 
-if [ -z "$content"]
+if [ -z "$content" ]
 then
 	content="."
 fi
