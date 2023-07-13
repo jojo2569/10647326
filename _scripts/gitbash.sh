@@ -17,11 +17,12 @@ fi
 git add $content
 
 
-echo "git add $content"
-sleep 5
-
-
 read -p "Commit description: " desc
+
+echo "git commit -m $desc"
+sleep 3
+
+
 git commit -m "$desc"
 
 
@@ -33,6 +34,6 @@ git branch -M main
 git push origin master
 
 sleep 2
-printf $uname
+printf $uname \n
 sleep 2
-printf $token
+printf $token \n
