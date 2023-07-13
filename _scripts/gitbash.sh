@@ -3,11 +3,11 @@
 # Push to GIT Repo
 
 
-read -p "Files/Folders:" content
+read -p "Files/Folders     : " content
 
 if [ -z "$content"]
 then
-	$content="."
+	content="."
 fi
 
 
