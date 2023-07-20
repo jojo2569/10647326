@@ -2,7 +2,7 @@
 
 # Purpose      : Loops and Creates New Folders, Errors on Existing Folders.
 # Filename     : folderMaker.sh
-# Date Created : 14-Jul-23
+# Date Created : 18-Jul-23
 # Date Modified: 20-Jul-23
 # Author       : Joe Velardi
 

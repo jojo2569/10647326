@@ -1,55 +1,27 @@
-#!/bin/bash 
-      
-read -rsp "Enter A Password: " password
-      
-len="${#password}" 
-      
-if [ $len -ge 8 ] ; then 
+#!/bin/bash
 
-	echo "$password" | grep -q [0-9] 
+# Purpose      : Enter Password; Validate Against Hashed Password (foo-bar).
+# Filename     : passwordCheck.sh
+# Date Created : 20-Jul-23
+# Date Modified: 20-Jul-23
+# Author       : Joe Velardi
 
-	if [ $? -eq 0 ] ; then 
 
-		echo "$password" | grep -q [A-Z] 
+# Get Password (Secretly).
+read -rsp "Please Enter Your Password: " password
 
-		if [ $? -eq 0 ] ; then 
+# Check hased Password from File.
+sha256sum < secret.txt
 
-			echo "$password" | grep -q [a-z] 
+#Validate if Password is Correct, or Not.
+if [ $? -eq 0 ] ; then
 
-			if [ $? -eq 0 ] ; then 
-
-				echo "$password" | grep -q [$,@,#,%] 
-
-				if [ $? -eq 0 ] ; then 
-
-					echo "Strong Password. Bravo!" 
-
-				else 
-
-					echo "Weak Password: Include Special Chars [$,@,#,%]" 
-
-				fi 
-
-			else 
-
-				echo "Weak Password: Include Lower Case Chars [a-z]"
-
-			fi 
-
-		else 
-
-			echo "Weak Password: Include Upper Case Chars [A-Z]"  
-
-		fi 
-
-	else 
-
-     		echo "Weak “Password: Include Numbers [0-9]"
-
-	fi
+	echo "Access Granted."
+	exit 0
 
 else
 
-	echo "Weak Password: Use at Least 8 Chars"
+	echo "Access Denied."
+	exit 1
 
-fi 
+fi

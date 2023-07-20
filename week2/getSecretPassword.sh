@@ -1,10 +1,19 @@
 #!/bin/bash
 
+# Purpose      : Enter Password; Validate Against Hashed Password.
+# Filename     : getSecretPassword.sh
+# Date Created : 14-Jul-23
+# Date Modified: 20-Jul-23
+# Author       : Joe Velardi
+
+
 # Get Password (Secretly).
 read -rsp "Please Enter Your Password: " password
 
+# Check hased Password from File.
 sha256sum < secret.txt
 
+#Validate if Password is Correct, or Not.
 if [ $? -eq 0 ] ; then
 
 	echo "Access Granted."
