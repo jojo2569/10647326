@@ -46,3 +46,5 @@ done
 
 #Summary
 echo -e "\n\nYou created $cntGood folder(s) and had $cntDupe duplicate(s)."
+
+exit 0
