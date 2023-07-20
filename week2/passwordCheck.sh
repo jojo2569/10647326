@@ -10,18 +10,19 @@
 # Get Password (Secretly).
 read -rsp "Please Enter Your Password: " password
 
-# Check hased Password from File.
-sha256sum < secret.txt
+# Check Hashed Password from File.
+echo -n $password | sha256sum --check --status secret.txt
 
 #Validate if Password is Correct, or Not.
 if [ $? -eq 0 ] ; then
 
-	echo "Access Granted."
-	exit 0
+	# Password Matches.
+	echo -e "\nAccess Granted."
 
 else
 
-	echo "Access Denied."
+	#Password Does Not match.
+	echo -e "\nAccess Denied."
 	exit 1
 
 fi
