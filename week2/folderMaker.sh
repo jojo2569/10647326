@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Purpose      : Loops and Creates New Folders, Errors on Existing Folders.
+# Filename     : folderMaker.sh
+# Date Created : 14-Jul-23
+# Date Modified: 20-Jul-23
+# Author       : Joe Velardi
+
+
 #Function to Prompt User & Create Folder.
 function createFolder() {
 
@@ -17,7 +24,7 @@ function createFolder() {
 	fi
 }
 
-#Vars
+#Variables
 cntGood=0
 cntDupe=0
 
@@ -43,6 +50,7 @@ do
 			;;
 	esac
 done
+
 
 #Summary
 echo -e "\n\nYou created $cntGood folder(s) and had $cntDupe duplicate(s)."
