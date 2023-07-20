@@ -33,7 +33,7 @@ if [ $? -eq 0 ] ; then
 			./setPassword.sh ;;
 
 		* )
-			#invalid Entry.
+			#Invalid Entry.
 			echo -e "\nInvalid Entey. Exiting ..."
 			sleep 1
 
@@ -42,5 +42,6 @@ if [ $? -eq 0 ] ; then
 else
 
 	echo "You Shall Not Pass."
+	exit 1
 
 fi
