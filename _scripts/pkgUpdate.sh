@@ -1,13 +1,24 @@
 #!/bin/bash
-# simple update script to update your system
-# send your password if required
-echo "your_password_here" | sudo -S apt update
-# pause for 1 second
+
+# Purpose      : Checks System & Updates Packages.
+# Filename     : pkgUpdate.sh
+# Date Created : 15-Jul-23
+# Date Modified: 20-Jul-23
+# Author       : Joe Velardi
+
+#Update Packages
+sudo -S apt update
+
+#Pause for 1 second
 sleep 1
-# upgrade the packages
+
+#Upgrade Packages
 sudo apt upgrade -y
-# pause for 1 second
+
+#Pause for 1 second
 sleep 1
-# remove old packages
+
+#Remove old packages
 sudo apt autoremove -y
+
 exit 0
