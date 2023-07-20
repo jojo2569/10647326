@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Purpose      : Push to GIT Hub Repo.
-# Filename     : second.sh
+# Filename     : gitBash.sh
 # Date Created : 14-Jul-23
 # Date Modified: 20-Jul-23
 # Author       : Joe Velardi
