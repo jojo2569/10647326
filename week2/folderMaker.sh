@@ -3,14 +3,14 @@
 # Purpose      : Loops and Creates New Folders, Errors on Existing Folders.
 # Filename     : folderMaker.sh
 # Date Created : 18-Jul-23
-# Date Modified: 20-Jul-23
+# Date Modified: 22-Jul-23
 # Author       : Joe Velardi
 
 
 #Function to Prompt User & Create Folder.
 function createFolder() {
 
-	read -p "Type the name of the folder you would like to create: " folderName
+	read -rp "Type the name of the folder you would like to create: " folderName
 
 
 	if [[ -d "$folderName" ]]
@@ -36,7 +36,7 @@ createFolder
 #Loop To Create Additional.
 while true
 do
-	read -p "Do you want to create another folder (yn) ?" yn
+	read -rp "Do you want to create another folder (yn) ?" yn
 
 	case $yn in
 		[Yy]* )

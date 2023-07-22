@@ -3,7 +3,7 @@
 # Purpose      : Enter Password; Validate Against Hashed Password (foo-bar).
 # Filename     : passwordCheck.sh
 # Date Created : 20-Jul-23
-# Date Modified: 20-Jul-23
+# Date Modified: 22-Jul-23
 # Author       : Joe Velardi
 
 
@@ -11,7 +11,7 @@
 read -rsp "Please Enter Your Password: " password
 
 # Check Hashed Password from File.
-echo -n $password | sha256sum --check --status secret.txt
+echo -n "$password" | sha256sum --check --status secret.txt
 
 #Validate if Password is Correct, or Not.
 if [ $? -eq 0 ] ; then

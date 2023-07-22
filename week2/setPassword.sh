@@ -3,12 +3,12 @@
 # Purpose      : Creates/Uses Folder; Enter password and Hash into Folder/secret.txt.
 # Filename     : setPassword.sh
 # Date Created : 18-Jul-23
-# Date Modified: 20-Jul-23
+# Date Modified: 22-Jul-23
 # Author       : Joe Velardi
 
 
 #Get Folder Name to Create.
-read -p "Type a folder to create: " folderName
+read -rp "Type a folder to create: " folderName
 
 #Check if Folder Exists, Create if New.
 if [[ -d "$folderName" ]]
@@ -23,7 +23,7 @@ fi
 read -rsp "Please Enter Your Password: " password
 
 #Redirect SHA Password to Folder Location.
-echo -n $password | sha256sum > ./$folderName/secret.txt
+echo -n "$password" | sha256sum > "$folderName"/secret.txt
 echo -e "\n\nThanks, All Done.\n"
 
 exit 0

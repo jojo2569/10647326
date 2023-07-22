@@ -3,7 +3,7 @@
 # Purpose      : Run passwordCheck.sh; Display Menu to Create Folder, Copy Folder, Set a Password.
 # Filename     : menu.sh
 # Date Created : 20-Jul-23
-# Date Modified: 20-Jul-23
+# Date Modified: 22-Jul-23
 # Author       : Joe Velardi
 
 
@@ -13,11 +13,11 @@
 if [ $? -eq 0 ] ; then
 
 	#Hashed Password matches; Enter Menu Option.
-	echo -e "\nCongrats! Your Password Matches. Enter a Menu Option."
-	echo    "  1. Create a Folder"
-	echo    "  2. Copy a Folder"
-	echo    "  3. Set a Password"
-	read -p "Option [1-3]: " option
+	echo -e  "\nCongrats! Your Password Matches. Enter a Menu Option."
+	echo     "  1. Create a Folder"
+	echo     "  2. Copy a Folder"
+	echo     "  3. Set a Password"
+	read -rp "Option [1-3]: " option
 
 	case $option in
 		[1]* )
