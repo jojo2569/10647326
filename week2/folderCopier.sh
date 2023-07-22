@@ -6,6 +6,7 @@
 # Date Modified: 20-Jul-23
 # Author       : Joe Velardi
 
+
 #Read Folder Name
 read -p "type the name of the folder you would like to copy: " folderName
 

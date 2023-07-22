@@ -6,6 +6,7 @@
 # Date Modified: 20-Jul-23
 # Author       : Joe Velardi
 
+
 #Get Folder Name to Create.
 read -p "Type a folder to create: " folderName
 
