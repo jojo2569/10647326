@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Purpose      : Folder Maker
+# Purpose      : Multiple Folder Maker
 # Filename     : megaFolderMaker.sh
 # Date Created : 23-Jul-2023
 # Date Modified: 23-Jul-2023
@@ -25,9 +25,9 @@ do
       
     #Create a new folder for that number 
       
-    echo "Creating directory number $i" 
+    echo "Creating directory week$i" 
       
-    mkdir "week $i" 
+    mkdir -p "../week$i" 
       
 done 
      
