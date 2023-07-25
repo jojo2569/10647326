@@ -15,11 +15,11 @@ function createFolder() {
 
 	if [ -d "$folderName" ]
 	then
-		echo -e "\nFolder $folderName already exists.\n"
+		echo -e "\nFolder \`$folderName\` already exists.\n"
 		((cntDupe+=1))
 	else
 		mkdir "$folderName"
-		echo -e "\nFolder $folderName created\n"
+		echo -e "\nFolder \`$folderName\` created\n"
 		((cntGood+=1))
 	fi
 }
@@ -27,6 +27,10 @@ function createFolder() {
 #Variables
 cntGood=0
 cntDupe=0
+
+RED="\033[0;31m"
+GREEN="\033[0;32m"
+NORMAL="\033[0m"
 
 
 #Initial User Prompt
@@ -36,7 +40,7 @@ createFolder
 #Loop To Create Additional.
 while true
 do
-	read -rp "Do you want to create another folder (yn) ?" yn
+	read -rp "Do you want to create another folder [yn] ?" yn
 
 	case $yn in
 		[Yy]* )
@@ -47,11 +51,11 @@ do
 			break
 			;;
 		* )
-			echo -e "\nPlease answer yes(y) or no(n)."
+			echo -e "\nPlease answer yes[y] or no[n]."
 			;;
 	esac
 done
 
 
 #Summary
-echo -e "\n\nYou created $cntGood folder(s) and had $cntDupe duplicate(s).\n"
+echo -e "\n\nYou created ${GREEN}$cntGood folder(s)${NORMAL} and had ${RED}$cntDupe duplicate(s)${NORMAL}.\n"

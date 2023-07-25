@@ -8,8 +8,8 @@
 
 
 #Variables
+RED="\033[0;31m"
 GREEN="\033[0;32m"
-BG_RED="\033[0;101m"
 NORMAL="\033[0m"
 
 # Get Password (Secretly).
@@ -27,7 +27,8 @@ if [ $? -eq 0 ] ; then
 else
 
 	#Password Does Not match.
-	echo -e "\n\n${BG_RED}Access Denied.${NORMAL}"
+	echo -e "\n\n${RED}Access Denied. Exiting ...${NORMAL}\n"
+	sleep 2
 	exit 1
 
 fi
