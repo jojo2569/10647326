@@ -3,7 +3,7 @@
 # Purpose      : Reads Content From a File. 
 # Filename     : filenames.sh
 # Date Created : 23-Jul-2023
-# Date Modified: 23-Jul-2023
+# Date Modified: 25-Jul-2023
 # Author       : Joe Velardi
 
 clear
@@ -27,3 +27,7 @@ do
     fi
 
 done < filenames.txt
+
+sleep 2
+
+exit 0

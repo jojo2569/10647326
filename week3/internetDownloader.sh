@@ -3,13 +3,13 @@
 # Purpose      : Download a File from a Website.
 # Filename     : internetDownloader.sh
 # Date Created : 24-Jul-2023
-# Date Modified: 24-Jul-2023
+# Date Modified: 25-Jul-2023
 # Author       : Joe Velardi
 
 
 clear
 
-while [ $? -eq 0 ]
+while true
 do
     # Read URL or exit.
     read -rp "Please Type the URL of a File to Download, or Type 'exit' to quit: " url
@@ -31,7 +31,7 @@ do
     else
 
         echo -e "\nThank You, Exiting ...\n"
-        exit 1
+        break
 
     fi
 

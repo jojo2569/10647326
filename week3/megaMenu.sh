@@ -8,17 +8,9 @@
 
 
 #Variables
-BLACK="\033[0;30m"
 RED="\033[0;31m"
 GREEN="\033[0;32m"
-BROWN="\033[0;33m"
 BLUE="\033[0;34m"
-PURPLE="\033[0;35m"
-CYAN="\033[0;36m"
-GREY="\033[0;37m"
-BG_RED="\033[0;101m"
-BG_GREEN="\033[0;102m"
-BG_WHITE="\033[0;107m"
 NORMAL="\033[0m"
 
 clear
@@ -26,7 +18,9 @@ clear
 #Run passwordCheck.sh
 ../week2/passwordCheck.sh
 
-function megaMenu() {
+#Loop Through Menu.
+while [ $? -eq 0 ]
+do
 
 	sleep 2
 	clear
@@ -86,11 +80,6 @@ function megaMenu() {
 
 	esac
 
-}
-
-while true
-do
-	megaMenu
 done
 
 exit 0
