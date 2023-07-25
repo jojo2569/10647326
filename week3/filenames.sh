@@ -13,6 +13,7 @@ while read -r line
 
 do
 
+    #Non-Empty Line Check.
     if [ -n "$line" ]
     then
 
