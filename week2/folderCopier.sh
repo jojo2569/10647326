@@ -3,7 +3,7 @@
 # Purpose      : Enter a Folder and Contents to Copy, Validates if Exists.
 # Filename     : folderCopier.sh
 # Date Created : 18-Jul-23
-# Date Modified: 22-Jul-23
+# Date Modified: 25-Jul-23
 # Author       : Joe Velardi
 
 
@@ -17,6 +17,8 @@ if [ -d "$folderName" ]; then
 	read -rp "Type the name of the destination folder: " newFolderName
 
 	cp -r "$folderName" "$newFolderName"
+
+	echo -e "\nFolder \`$folderName\` copied to \`$newFolderName\`.\n" 
 
 else
 

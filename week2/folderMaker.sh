@@ -3,7 +3,7 @@
 # Purpose      : Loops and Creates New Folders, Errors on Existing Folders.
 # Filename     : folderMaker.sh
 # Date Created : 18-Jul-23
-# Date Modified: 22-Jul-23
+# Date Modified: 25-Jul-23
 # Author       : Joe Velardi
 
 
@@ -40,6 +40,7 @@ do
 
 	case $yn in
 		[Yy]* )
+			clear
 			createFolder
 			;;
 		[Nn]* )
@@ -53,6 +54,4 @@ done
 
 
 #Summary
-echo -e "\n\nYou created $cntGood folder(s) and had $cntDupe duplicate(s)."
-
-exit 0
+echo -e "\n\nYou created $cntGood folder(s) and had $cntDupe duplicate(s).\n"
