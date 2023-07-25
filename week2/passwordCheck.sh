@@ -29,6 +29,7 @@ else
 	#Password Does Not match.
 	echo -e "\n\n${RED}Access Denied. Exiting ...${NORMAL}\n"
 	sleep 2
+	clear
 	exit 1
 
 fi
