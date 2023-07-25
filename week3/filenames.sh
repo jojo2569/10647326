@@ -13,17 +13,22 @@ while read -r line
 
 do
 
-    #Folder Check.,
-    if [ -f "$line" ] 
+    if [ -n "$line" ]
     then
-        echo -e "'$line' is a file that exists!"
 
-    #Directory Check
-    elif [ -d "$line" ]
-    then
-        echo -e "'$line' is a directory." 
-    else
-        echo -e "I don't know what '$line' is!"
+        #Folder Check.
+        if [ -f "$line" ]
+        then
+            echo -e "'$line' is a file that exists!"
+
+        #Directory Check
+        elif [ -d "$line" ]
+        then
+            echo -e "'$line' is a directory." 
+        else
+            echo -e "I don't know what '$line' is!"
+        fi
+
     fi
 
 done < filenames.txt
