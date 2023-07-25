@@ -40,7 +40,7 @@ createFolder
 #Loop To Create Additional.
 while true
 do
-	read -rp "Do you want to create another folder [yn] ?" yn
+	read -rp "Do you want to create another folder [yn] ? " yn
 
 	case $yn in
 		[Yy]* )
