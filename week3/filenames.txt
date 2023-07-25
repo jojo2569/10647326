@@ -1,9 +1,9 @@
 
-       megafoldermaker.sh 
+       megaFolderMaker.sh 
       
 doginasuit.jpg 
       
-../week 1 
+../week1 
       
 . 
       
