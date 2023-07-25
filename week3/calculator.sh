@@ -3,7 +3,7 @@
 # Purpose      : Simple Expression Calculator with Colors.
 # Filename     : calculator.sh
 # Date Created : 23-Jul-2023
-# Date Modified: 23-Jul-2023
+# Date Modified: 25-Jul-2023
 # Author       : Joe Velardi
 
 
@@ -16,14 +16,11 @@ NORMAL="\033[0m"
 
 while [ "$?" -eq 0 ] ; do
 
-	clear
-
 	echo -e  "\nCalculator. Enter a Menu Option."
 	echo -e  "  1. Addition"
 	echo -e  "  2. Subtraction"
 	echo -e  "  3. Multiplication"
 	echo -e  "  4. Division"
-	echo -e  "  5. Exit"
 
 	read -rp "Option [1-5]: " option
 
@@ -56,11 +53,11 @@ while [ "$?" -eq 0 ] ; do
 			;;
 		[5]* )
 			echo -e "\nExiting ...\n"
-			exit 1
+			break
 			;;
 		* )
 			echo -e "\nIncorrect Value. Exiting.\n"
-			exit 1
+			break
 			;;
 	esac    
 
@@ -69,13 +66,12 @@ while [ "$?" -eq 0 ] ; do
 
 	case $yn in
 		[Yy]* )
+			clear
 			;;
 		* )
 			echo -e "\nExiting ...\n"
-			exit 1
+			break
 			;;
 	esac
 
 done
-
-exit 0

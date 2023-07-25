@@ -2,8 +2,8 @@
 
 # Purpose      : Run passwordCheck.sh; Display Menu to Create Folder, Copy Folder, Set a Password.
 # Filename     : menu.sh
-# Date Created : 20-Jul-23
-# Date Modified: 22-Jul-23
+# Date Created : 24-Jul-23
+# Date Modified: 25-Jul-23
 # Author       : Joe Velardi
 
 
@@ -26,20 +26,25 @@ clear
 #Run passwordCheck.sh
 ../week2/passwordCheck.sh
 
-if [ $? -eq 0 ] ; then
+function megaMenu() {
+
+	sleep 2
+	clear
 
 	#Hashed Password matches; Enter Menu Option.
-	echo -e  "\n${GREEN}Congrats! Your Password Matches. Enter a Menu Option.${BLUE}"
+	echo -e  "\n${GREEN}MEGA MENU. Enter an Option.${BLUE}"
 	echo     "  1. Create a Folder"
 	echo     "  2. Copy a Folder"
 	echo     "  3. Set a Password"
 	echo     "  4. Calculator"
 	echo     "  5. Create Week Folders"
 	echo     "  6. Check Filenames"
-	echo     "  3. Download a File"
-	echo     "  8. Exit"
+	echo     "  7. Download a File"
+	echo -e  "  8. Exit${NORMAL}"
 
-	read -rp "${WHITE}Option [1-3]: ${NORMAL})" option
+	read -rp "Option [1-8]: " option
+
+	clear
 
 	case $option in
 		[1]* )
@@ -72,7 +77,7 @@ if [ $? -eq 0 ] ; then
 
 		[8]* )
 			#Exit.
-			exit 1 ;;
+			exit 0 ;;
 
 		* )
 			#Invalid Entry.
@@ -81,9 +86,11 @@ if [ $? -eq 0 ] ; then
 
 	esac
 
-else
+}
 
-	echo "${BG_RED}You Shall Not Pass.${NORMAL}"
-	exit 1
+while true
+do
+	megaMenu
+done
 
-fi
+exit 0
