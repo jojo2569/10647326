@@ -1,0 +1,55 @@
+{
+	"Add Shebang": {
+		"prefix": "shebang",
+		"body"  : [ 
+				"#!/bin/bash",
+				"",
+				"# Purpose      : {purpose}",
+				"# Filename     : $TM_FILENAME",
+				"# Date Created : $CURRENT_DATE-$CURRENT_MONTH_NAME_SHORT-$CURRENT_YEAR",
+				"# Date Modified: $CURRENT_DATE-$CURRENT_MONTH_NAME_SHORT-$CURRENT_YEAR",
+				"# Author       : Joe Velardi",
+				"",
+				"",
+				""
+		],
+		"description": "Add shebang Script Head & Comments."
+
+	},
+
+	"Add While Loop": {
+		"prefix": "whileLoop",
+		"body"  : [
+				"while [ condition ]",
+				"do",
+				"  #commands ...",
+				"done"
+		],
+		"description": "Add while loop Construct."
+	},
+
+	"Add Color Codes": {
+		"prefix": "color",
+		"body"  : [
+				"BLACK=\"\\033[0;30m\"",
+				"RED=\"\\033[0;31m\"",
+				"GREEN=\"\\033[0;32m\"",
+				"BROWN=\"\\033[0;33m\"",
+				"BLUE=\"\\033[0;34m\"",
+				"PURPLE=\"\\033[0;35m\"",
+				"CYAN=\"\\033[0;36m\"",
+				"GREY=\"\\033[0;37m\"",
+
+				"BG_RED=\"\\033[0;101m\"",
+				"BG_GREEN=\"\\033[0;102m\"",
+				"BG_WHITE=\"\\033[0;107m\"",
+
+				"NORMAL=\"\\033[0m\""
+		],
+		"description": "Add Color Codes as Variables."
+
+	}
+
+
+
+}

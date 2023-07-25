@@ -59,7 +59,8 @@ do
 
 		[5]* )
 			#Create Week Folders.
-			./megaFolderMaker.sh ;;
+			read -rp "Please Enter Two Numbers : " num1 num2
+			./megaFolderMaker.sh "$num1" "$num2" ;;
 
 		[6]* )
 			#Check Filenames.
@@ -75,7 +76,7 @@ do
 
 		* )
 			#Invalid Entry.
-			echo -e "\n${RED}Invalid Entey. Exiting ...${NORMAL}clear"
+			echo -e "\n${RED}Invalid Enty. Exiting ...${NORMAL}"
 			sleep 1
 
 	esac
