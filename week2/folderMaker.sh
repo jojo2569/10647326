@@ -28,8 +28,8 @@ function createFolder() {
 cntGood=0
 cntDupe=0
 
-RED="\033[0;31m"
-GREEN="\033[0;32m"
+RED="\033[31m"
+GREEN="\033[32m"
 NORMAL="\033[0m"
 
 
