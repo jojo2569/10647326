@@ -19,14 +19,23 @@ do
 
         #Read Location to Store File.
         read -rp "Type the Location of Where You Would Like to Download the File to: " location
+     
+        mkdir -p "$location"                            	#Creates Folder; Prevents Error on Existing Folder.        
+        wget -qP "$location" "$url"     			#Gets File and Copies to the Above Location.
+
+	#Test for Valid URL/File Location
+	if [ "$?" -eq 8 ]
+	then
+		echo -e "\nInvalid URL. Try again ...\n"
+	else
+
+
+		doc=$(echo -e "$url" | awk -F"/" '{print $NF}') #Get Document name from URL.
         
-        mkdir -p "$location"                            #Creates Folder; Prevents Error on Existing Folder.        
-        wget -qP "$location" "$url"                     #Gets File and Copies to the Above Location.
-        doc=$(echo -e "$url" | awk -F"/" '{print $NF}') #Get Document name from URL.
-        
-        #Display Output of Downloaded Content.
-        echo -e "\nFile Copied" && ls -al "$location"/"$doc" --color=auto && echo -e "\n"
-        sleep 1
+		#Display Output of Downloaded Content.
+		echo -e "\nFile Location" && ls -al "$location"/"$doc" --color=auto && echo -e "\n"
+		sleep 1
+	fi
 
     else
 
