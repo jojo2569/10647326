@@ -3,7 +3,7 @@
 # Purpose      : Creates/Uses Folder; Enter password and Hash into Folder/secret.txt.
 # Filename     : setPassword.sh
 # Date Created : 18-Jul-23
-# Date Modified: 22-Jul-23
+# Date Modified: 25-Jul-23
 # Author       : Joe Velardi
 
 
