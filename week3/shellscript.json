@@ -18,15 +18,46 @@
 	},
 
 	"Add While Loop": {
-		"prefix": "whileLoop",
+		"prefix": "while-loop",
 		"body"  : [
 				"while [ condition ]",
 				"do",
-				"  #commands ...",
+				"  echo \"do something ...\"",
 				"done"
 		],
 		"description": "Add while loop Construct."
 	},
+
+	"Add if-else Statement": {
+		"prefix": "if-else-condition",
+		"body"  : [
+				"if [ condition ]",
+				"then",
+				"  echo \"do something ...\"",
+				"else",
+				"  echo \"do something else ...\"",
+				"fi"
+		],
+		"description": "Add if-else Conditional Construct."
+	},
+
+
+	"Add if-elif Statement": {
+		"prefix": "if-elif-condition",
+		"body"  : [
+				"if [ condition ]",
+				"then",
+				"  echo \"do something ...\"",
+				"elif [ condition ]",
+				"then",
+				"  echo \"do something different ...\"",
+				"else",
+				"  echo \"do something else ...\"",
+				"fi"
+		],
+		"description": "Add if-elif Conditional Construct."
+	},
+
 
 	"Add Color Codes": {
 		"prefix": "color",
@@ -46,8 +77,8 @@
 				"BG_WHITE=\"\\033[107m\""
 		],
 		"description": "Add Color Codes as Variables."
-
 	}
+
 
 
 
