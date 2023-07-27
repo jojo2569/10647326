@@ -7,7 +7,7 @@
 # Author       : Joe Velardi
 
 
-#Variables
+#Constants
 RED="\033[31m"
 GREEN="\033[32m"
 BLUE="\033[34m"
