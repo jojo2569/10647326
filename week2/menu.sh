@@ -34,7 +34,7 @@ if [ $? -eq 0 ] ; then
 
 		* )
 			#Invalid Entry.
-			echo -e "\nInvalid Entey. Exiting ..."
+			echo -e "\nInvalid Entry. Exiting ..."
 			sleep 1
 
 	esac
