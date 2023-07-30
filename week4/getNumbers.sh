@@ -3,11 +3,11 @@
 # Purpose      : Selet Numbers Between Ranges
 # Filename     : getNumbers.sh
 # Date Created : 26-Jul-2023
-# Date Modified: 26-Jul-2023
+# Date Modified: 27-Jul-2023
 # Author       : Joe Velardi
 
 
-#Variables
+#Constants
 RED="\033[31m"
 NORMAL="\033[0m"
 
