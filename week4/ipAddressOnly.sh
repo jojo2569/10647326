@@ -11,7 +11,7 @@
 ipInfo="$(./ipInfo.sh)"
 
 #Parse out the ip address lines using sed 
-addresses=$(echo "$ipInfo" | sed -n '/IP Address/p') 
+addresses=$(echo "$ipInfo" | sed -n '/IP Address:/p') 
       
 #Format Output
 echo -e "IP Addresses on this computer are:\n$addresses" 
