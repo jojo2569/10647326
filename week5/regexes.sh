@@ -3,7 +3,7 @@
 # Purpose      : Smorgaboard or regex Examples.
 # Filename     : regexes.sh
 # Date Created : 31-Jul-2023
-# Date Modified: 31-Jul-2023
+# Date Modified: 01-Aug-2023
 # Author       : Joe Velardi
 
 
@@ -60,8 +60,8 @@ do
 		[5]* )
 			#All Lines that would Make a Good Password
 			echo -e "All Lines that would Make a Good Password\n"
-			echo -e "${BROWN}grep -r -P --color '(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+])' ../week*${NORMAL}\n" 
-            grep -r -P --color '(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+])' ../week* ;;
+			echo -e "${BROWN}grep -r -P --color '(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+])' ../week* | more${NORMAL}\n" 
+            grep -r -P --color '(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+])' ../week* | more ;;
 
 		[6]* )
 			#Exit.
@@ -69,11 +69,9 @@ do
 
 		* )
 			#Invalid Entry.
-			echo -e "\n${RED}Invalid Enty. Exiting ...${NORMAL}"
-			sleep 1
+			echo -e "\n${RED}Invalid Entry. Try Again ...${NORMAL}"
 
 	esac
-
 
     echo -e "\n"
     read -p "Press Any Key to Continue ..."
