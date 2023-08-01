@@ -21,10 +21,10 @@ do
 
     #Menu
     echo -e  "${GREEN}Enter an Option to Display grep Output.${GREY}"
-    echo     "  1. All sed Statements"
+    echo     "  1. All \`sed\` Statements"
     echo     "  2. All Lines Starting with the Letter \`m\`"
     echo     "  3. All Lines Containing 3-digit Numbers"
-    echo     "  4. All echo Statements with at least 3 Words"
+    echo     "  4. All \`echo\` Statements with at least 3 Words"
     echo     "  5. All Lines that would Make a Good Password"
     echo -e  "  6. Exit${NORMAL}"
 
@@ -34,24 +34,33 @@ do
 
 	case $selection in
 		[1]* )
-            echo -e "${BROWN}grep --color -r 'sed -.' ~/scripts/portfolio/w*${NORMAL}\n"
-			grep --color -r 'sed -.' ~/scripts/portfolio/w* ;;
+			#All `sed` Statements.
+			echo -e "All \`sed\` Statements\n"
+            echo -e "${BROWN}grep --color -r 'sed -.' ../week*${NORMAL}\n"
+			grep -r --color 'sed -.' ../week* ;;
 
 		[2]* )
-			echo -e "${BROWN}grep --color -r '^m' ~/scripts/portfolio/w*${NORMAL}\n"
-			grep --color -r '^m' ~/scripts/portfolio/w* ;;
+			#All Lines Starting with the Letter `m`
+			echo -e "All Lines Starting with the Letter \`m\`\n"
+			echo -e "${BROWN}grep --color -r '^m' ../week*${NORMAL}\n"
+			grep -r --color '^m' ../week* ;;
 
 		[3]* )
-			echo -e "${BROWN}grep --color -r -E '[0-9]{3,3}' ~/scripts/portfolio/w*${NORMAL}\n"
-			grep --color -r  '[0-9]{3,3}' ~/scripts/portfolio/w* ;;
+			#All Lines Containing 3-digit Numbers
+			echo -e "All Lines Containing 3-digit Numbers\n"
+			echo -e "${BROWN}grep -r -E --color  '[0-9]{3,3}' ../week*${NORMAL}\n"
+			grep -r -E --color  '[0-9]{3,3}' ../week* ;;
 
 		[4]* )
-			#todo 
-            ;;
+			#All `echo` Statements with at least 3 Words
+			echo -e "All \`echo\` Statements with at least 3 Words\n"
+            grep -r -E --color 'echo*' | grep --color '".*' ../week* ;;
 
 		[5]* )
-			echo -e "${BROWN}grep -r '(?=^.{8,}$)(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+])' ~/scripts/portfolio/w*${NORMAL}\n" 
-            grep -r '[(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+])]' ~/scripts/portfolio/w* ;;
+			#All Lines that would Make a Good Password
+			echo -e "All Lines that would Make a Good Password\n"
+			echo -e "${BROWN}grep -r -P --color '(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+])' ../week*${NORMAL}\n" 
+            more | grep -r -P --color '(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+])' ../week* ;;
 
 		[6]* )
 			#Exit.
@@ -63,6 +72,7 @@ do
 			sleep 1
 
 	esac
+
 
     echo -e "\n"
     read -p "Press Any Key to Continue ..."
