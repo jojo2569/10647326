@@ -74,6 +74,6 @@ do
 	esac
 
     echo -e "\n"
-    read -p "Press Any Key to Continue ..."
+    read -p "Press Enter to Continue ..."
 
 done
