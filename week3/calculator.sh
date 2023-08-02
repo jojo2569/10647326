@@ -17,14 +17,15 @@ NORMAL="\033[0m"
 while [ "$?" -eq 0 ] ; do
 
 	echo -e  "\nCalculator. Enter a Menu Option."
-	echo -e  "  1. Addition"
-	echo -e  "  2. Subtraction"
-	echo -e  "  3. Multiplication"
-	echo -e  "  4. Division"
+	echo     "  1. Addition"
+	echo     "  2. Subtraction"
+	echo     "  3. Multiplication"
+	echo     "  4. Division"
+	echo     "  5. Exit"
 
 	read -rp "Option [1-5]: " option
 
-	# Read Inputs if Menu  Options [1-4]
+	#Read inputs of menu options
 	if [[ "$option" -ge 1 && "$option" -le 4 ]] ; then
 
 		echo -e "\n"
