@@ -29,7 +29,7 @@ isNumber="^[0-9]+$"
 
 #Common Error Message.
 displayInvalidEntry() {
-        echo -e "\n${RED}Invalid Entry. Input must be between $MIN and $MAX.${NORMAL}\n"
+        echo -e "\n${RED}Invalid Entry. Input must be between $MIN and $MAX!${NORMAL}\n"
 }
 
 

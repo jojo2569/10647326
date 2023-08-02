@@ -43,10 +43,10 @@ echo "This is the start of the script"
       
 getNumber "Please type a number between 1 and 10" 1 10 
       
-echo "Thank you!" 
+echo "You are Welcome!" 
       
 getNumber "Please type a number between 50 and 100" 50 100 
       
-echo "Thank you!" 
+echo "You are Welcome!" 
      
 					
