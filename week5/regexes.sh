@@ -13,6 +13,7 @@ GREEN="\033[0;32m"
 BROWN="\033[0;33m"
 GREY="\033[0;37m"
 NORMAL="\033[0m"
+WORDS='you and the date'
 
 while true
 do 
@@ -35,33 +36,33 @@ do
 	case $selection in
 		[1]* )
 			#All `sed` Statements.
-			echo -e "All \`sed\` Statements\n"
+			echo -e "All \`sed\` Statements.\n"
             echo -e "${BROWN}grep --color -r 'sed -.' ../week*${NORMAL}\n"
 			grep -r --color 'sed -.' ../week* ;;
 
 		[2]* )
 			#All Lines Starting with the Letter `m`
-			echo -e "All Lines Starting with the Letter \`m\`\n"
+			echo -e "All Lines Starting with the Letter \`m\`.\n"
 			echo -e "${BROWN}grep -r --color '^m' ../week*${NORMAL}\n"
 			grep -r --color '^m' ../week* ;;
 
 		[3]* )
 			#All Lines Containing 3-digit Numbers Only
-			echo -e "All Lines Containing 3-digit Numbers Only\n"
+			echo -e "All Lines Containing 3-digit Numbers Only.\n"
 			echo -e "${BROWN}grep -r -P --color '(?<!\d)\d{3}(?!\d)' ../week*${NORMAL}\n"
 			grep -r -P --color '(?<!\d)\d{3}(?!\d)' ../week* ;;
 
 		[4]* )
 			#All `echo` Statements with at least 3 Words
-			echo -e "All \`echo\` Statements with at least 3 Words\n"
+			echo -e "All \`echo\` Statements with at least 3 Words.\n"
 			echo -e "${BROWN}grep -r -P --color 'echo.*\"([a-zA-Z]+\s){3}' ../week*${NORMAL}\n"
             grep -r -P --color 'echo.*"([a-zA-Z]+\s){3}' ../week* ;;
 
 		[5]* )
 			#All Lines that would Make a Good Password
-			echo -e "All Lines that would Make a Good Password\n"
-			echo -e "${BROWN}grep -r -P --color '(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+])' ../week* | more${NORMAL}\n" 
-            grep -r -P --color '(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+])' ../week* | more ;;
+			echo -e "All Lines that would Make a Good Password.\n"
+			echo -e "${BROWN}grep -r -P --color '(?=^.{12,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+])(?=.*[^\$WORDS[@]])(?=.*[^\s])' ../week* | more${NORMAL}\n" 
+            grep -r -P --color '(?=^.{12,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+])(?=.*[^${WORDS}[@]])(?=.*[^\s])' ../week* ;;
 
 		[6]* )
 			#Exit.
