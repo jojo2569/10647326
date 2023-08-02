@@ -7,26 +7,51 @@
 # Author       : Joe Velardi
 
 
-clear
+# Source Files
+source userAccounts.awk
 
-grep '/bin/bash' /etc/passwd | awk '
+#Constants
+RED="\033[31m"
+GREEN="\033[32m"
+GREY="\033[37m"
+NORMAL="\033[0m"
 
-BEGIN {
-    FS=":";
-    BLUE="\033[34m";
-    BROWN="\033[033m";
-    PURPLE="\033[35m";
-    NORMAL="\033[0m";
 
-    print "________________________________________________________________________________________________";
-    printf("| %sUsername%s   | %sUserID%s     | %sGroupID%s    | %sHome%s                           | %sShell%s                |\n", BLUE, NORMAL, BLUE, NORMAL, BLUE, NORMAL, BLUE, NORMAL, BLUE, NORMAL);
-    print "________________________________________________________________________________________________";
-}
+while true
+do
 
-{
-    printf("| %s%-10s%s | %s%-10s%s | %s%-10s%s | %s%-30s%s | %s%-20s%s |\n", BROWN, $1, NORMAL, PURPLE, $3, NORMAL, PURPLE, $4, NORMAL, PURPLE, $6, NORMAL, PURPLE, $7, NORMAL);
-}
+    clear
 
-END {
-    printf ("________________________________________________________________________________________________\n\n");
-}' 
+    #Menu
+    echo -e  "${GREEN}Enter an Option to Display /etc/passwd Output.${GREY}"
+    echo     "  1. Print All Accounts"
+    echo     "  2. Print Accounts Using bash Shell"
+    echo -e  "  3. Exit${NORMAL}"
+
+    read -rp "Option [1-3]: " selection
+
+	clear
+
+	case $selection in
+		[1]* )
+			#All Accounts.
+			grep ':' /etc/passwd | awk -f userAccounts.awk ;;
+
+		[2]* )
+			#Accounts Using bash Shell.
+			grep '/bin/bash' /etc/passwd | awk -f userAccounts.awk ;;
+
+		[3]* )
+			#Exit.
+			exit 0 ;;
+
+		* )
+			#Invalid Entry.
+			echo -e "\n${RED}Invalid Entry. Try Again ...${NORMAL}"
+
+	esac
+
+	echo -e "\n"
+	read -p "Press Enter to Continue ..."
+
+done
