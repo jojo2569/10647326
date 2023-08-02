@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Purpose      : Prints texta to the terminal, including user input.
+# Purpose      : Prints text to the terminal, including user input.
 # Filename     : second.sh
 # Date Created : 14-Jul-23
-# Date Modified: 20-Jul-23
+# Date Modified: 02-Aug-23
 # Author       : Joe Velardi
 
 
