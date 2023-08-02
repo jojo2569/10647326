@@ -1,0 +1,85 @@
+{
+	"Add Shebang": {
+		"prefix": "shebang",
+		"body"  : [ 
+				"#!/bin/bash",
+				"",
+				"# Purpose      : {purpose}",
+				"# Filename     : $TM_FILENAME",
+				"# Date Created : $CURRENT_DATE-$CURRENT_MONTH_NAME_SHORT-$CURRENT_YEAR",
+				"# Date Modified: $CURRENT_DATE-$CURRENT_MONTH_NAME_SHORT-$CURRENT_YEAR",
+				"# Author       : Joe Velardi",
+				"",
+				"",
+				""
+		],
+		"description": "Add shebang Script Head & Comments."
+
+	},
+
+	"Add While Loop": {
+		"prefix": "while-loop",
+		"body"  : [
+				"while [ condition ]",
+				"do",
+				"  echo \"do something ...\"",
+				"done"
+		],
+		"description": "Add while loop Construct."
+	},
+
+	"Add if-else Statement": {
+		"prefix": "if-else-condition",
+		"body"  : [
+				"if [ condition ]",
+				"then",
+				"  echo \"do something ...\"",
+				"else",
+				"  echo \"do something else ...\"",
+				"fi"
+		],
+		"description": "Add if-else Conditional Construct."
+	},
+
+
+	"Add if-elif Statement": {
+		"prefix": "if-elif-condition",
+		"body"  : [
+				"if [ condition ]",
+				"then",
+				"  echo \"do something ...\"",
+				"elif [ condition ]",
+				"then",
+				"  echo \"do something different ...\"",
+				"else",
+				"  echo \"do something else ...\"",
+				"fi"
+		],
+		"description": "Add if-elif Conditional Construct."
+	},
+
+
+	"Add Color Codes": {
+		"prefix": "color",
+		"body"  : [
+				"BLACK=\"\\033[30m\"",
+				"RED=\"\\033[31m\"",
+				"GREEN=\"\\033[32m\"",
+				"BROWN=\"\\033[033m\"",
+				"BLUE=\"\\033[34m\"",
+				"PURPLE=\"\\033[35m\"",
+				"CYAN=\"\\033[36m\"",
+				"GREY=\"\\033[37m\"",
+				"NORMAL=\"\\033[0m\"",
+
+				"BG_RED=\"\\033[101m\"",
+				"BG_GREEN=\"\\033[102m\"",
+				"BG_WHITE=\"\\033[107m\""
+		],
+		"description": "Add Color Codes as Variables."
+	}
+
+
+
+
+}
