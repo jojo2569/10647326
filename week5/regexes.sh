@@ -37,7 +37,7 @@ do
 		[1]* )
 			#All `sed` Statements.
 			echo -e "All \`sed\` Statements.\n"
-            echo -e "${BROWN}grep --color -r 'sed -.' ../week*${NORMAL}\n"
+			echo -e "${BROWN}grep --color -r 'sed -.' ../week*${NORMAL}\n"
 			grep -r --color 'sed -.' ../week* ;;
 
 		[2]* )
@@ -56,13 +56,13 @@ do
 			#All `echo` Statements with at least 3 Words
 			echo -e "All \`echo\` Statements with at least 3 Words.\n"
 			echo -e "${BROWN}grep -r -P --color 'echo.*\"([a-zA-Z]+\s){3}' ../week*${NORMAL}\n"
-            grep -r -P --color 'echo.*"([a-zA-Z]+\s){3}' ../week* ;;
+			grep -r -P --color 'echo.*"([a-zA-Z]+\s){3}' ../week* ;;
 
 		[5]* )
 			#All Lines that would Make a Good Password
 			echo -e "All Lines that would Make a Good Password.\n"
 			echo -e "${BROWN}grep -r -P --color '(?=^.{12,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+])(?=.*[^\$WORDS[@]])(?=.*[^\s])' ../week* | more${NORMAL}\n" 
-            grep -r -P --color '(?=^.{12,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+])(?=.*[^${WORDS}[@]])(?=.*[^\s])' ../week* ;;
+			grep -r -P --color '(?=^.{12,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+])(?=.*[^${WORDS}[@]])(?=.*[^\s])' ../week* ;;
 
 		[6]* )
 			#Exit.
@@ -74,7 +74,7 @@ do
 
 	esac
 
-    echo -e "\n"
-    read -p "Press Enter to Continue ..."
+	echo -e "\n"
+	read -p "Press Enter to Continue ..."
 
 done
