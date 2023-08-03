@@ -1,6 +1,4 @@
-#!/bin/bash
-
-#Prints User Account Information from /etc/passwd
+#Prints Table for /etc/passwd
 function printUserAccounts() {
 }
 BEGIN {
