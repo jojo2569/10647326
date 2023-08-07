@@ -20,8 +20,7 @@ alphaNumericList = string.printable[:62]                #Index 62 is AlphaNumeri
 startLength      = 1
 result           = None
 startTime        = int(time.time())
-incrementTime    = int(time.time())
-passwordHash     = "da186235f547c5d39e230137ab34c125a0bec8d0e6d27a11efec418d9b79067d"
+passwordHash     = "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824"
 
 
 #Function: Converts Tuple to String for encoding.
