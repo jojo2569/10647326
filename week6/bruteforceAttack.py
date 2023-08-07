@@ -17,8 +17,8 @@ import os
 
 #Variables
 alphaNumericList = string.printable[:62]                #Index 62 is AlphaNumeric only. Index 95 includes Special Chars.
-startLength      = 4
-result           = ""
+startLength      = 1
+result           = None
 startTime        = int(time.time())
 passwordHash     = "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824"
 
@@ -53,7 +53,7 @@ os.system('clear')
 print(f"Brute Force Password Generator ...\n")
 print(f"Hashed Password: {passwordHash}\n")
 
-while result == "":
+while result == None:
     print(f"Before - StartLength {startLength} and Result {result}")
     
     result  = bruteForce(alphaNumericList, passwordHash, startLength)
@@ -64,5 +64,4 @@ while result == "":
 
 #Print Results.
 endTime = int(time.time())
-
 print(f"Password `{result}` cracked in {endTime - startTime} seconds.\n")
