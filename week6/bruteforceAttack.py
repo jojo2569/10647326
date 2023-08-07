@@ -46,6 +46,7 @@ def bruteForce(alphaNumericList, passwordHash, passwordLength):
         if wordHash == passwordHash:
             return wordCombo.decode('utf-8')
 
+
 #Main
 os.system('clear')
 
