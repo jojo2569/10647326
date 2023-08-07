@@ -1,6 +1,6 @@
 {
-	"Add Shebang": {
-		"prefix": "shebang",
+	"Add Shebang - Bash": {
+		"prefix": "shebang-bash",
 		"body"  : [ 
 				"#!/bin/bash",
 				"",
@@ -13,7 +13,25 @@
 				"",
 				""
 		],
-		"description": "Add shebang Script Head & Comments."
+		"description": "Add shebang Bash Script Head & Comments."
+
+	},
+
+	"Add Shebang - Python": {
+		"prefix": "shebang-python",
+		"body"  : [ 
+				"#!/usr/bin/python3",
+				"",
+				"# Purpose      : {purpose}",
+				"# Filename     : $TM_FILENAME",
+				"# Date Created : $CURRENT_DATE-$CURRENT_MONTH_NAME_SHORT-$CURRENT_YEAR",
+				"# Date Modified: $CURRENT_DATE-$CURRENT_MONTH_NAME_SHORT-$CURRENT_YEAR",
+				"# Author       : Joe Velardi",
+				"",
+				"",
+				""
+		],
+		"description": "Add shebang Pythin Script Head & Comments."
 
 	},
 
@@ -78,8 +96,5 @@
 		],
 		"description": "Add Color Codes as Variables."
 	}
-
-
-
 
 }
