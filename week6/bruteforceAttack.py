@@ -20,7 +20,8 @@ alphaNumericList = string.printable[:62]                #Index 62 is AlphaNumeri
 startLength      = 1
 result           = None
 startTime        = int(time.time())
-passwordHash     = "04e77bf8f95cb3e1a36a59d1e93857c411930db646b46c218a0352e432023cf2"
+incrementTime    = int(time.time())
+passwordHash     = "da186235f547c5d39e230137ab34c125a0bec8d0e6d27a11efec418d9b79067d"
 
 
 #Function: Converts Tuple to String for encoding.
@@ -49,12 +50,13 @@ def bruteForce(alphaNumericList, passwordHash, passwordLength):
 #Main
 os.system('clear')
 
-print(f"Brute Force Password Finder (Searching AlphaNumeric Only) ...\n")
+print(f"Brute Force Password Finder ...\n")
 
 while result == None:
-    
+
     result  = bruteForce(alphaNumericList, passwordHash, startLength)
     startLength +=1
+
 
 #Print Results.
 endTime = int(time.time())
