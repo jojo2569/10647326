@@ -6,7 +6,7 @@
 # Date Modified: 12-Aug-2023
 # Author       : Joe Velardi
 
-file="../files/cleansedData.txt"
+file="../files/tempData.txt"
 
 i=1
 while read -r line; do
