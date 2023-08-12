@@ -8,12 +8,13 @@
 
 
 #Variables
-url="https://haveibeenpwned.com/PwnedWebsites"
-location="../files"
+source "./variables.sh"
+
+#url="https://haveibeenpwned.com/PwnedWebsites"
+#location="../files"
 
 #Constants
-RED="\033[31m"
-NORMAL="\033[0m"
+source "./constants.sh"
 
 
 #Test for Valid URL.
@@ -30,6 +31,8 @@ then
     #Display Output of Downloaded Content.
     echo -e "\nFile Downloaded Successfully ..." && ls -al "$location"/"$doc" --color=auto && echo -e "\n"
     sleep 2
+
+    $(./cleanseData.sh > ../)
 
 else
     echo -e "\n${RED}Invalid URL ...${NORMAL}\n"

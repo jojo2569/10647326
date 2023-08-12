@@ -7,31 +7,22 @@
 # Author       : Joe Velardi
 
 
-#References
-
-
 #Constants
-RED="\033[31m"
-GREEN="\033[32m"
-BROWN="\033[033m"
-BLUE="\033[34m"
-PURPLE="\033[35m"
-CYAN="\033[36m"
-GREY="\033[37m"
-NORMAL="\033[0m"
+source "./scripts/constants.sh"
 
 
 #Variables
+source "./scripts/variables.sh"
 
 
 #Enter Valid Password to Commence.
-./scripts/passwordChecker.sh
+#./scripts/passwordChecker.sh
 
 #Loop Through Menu.
 while [ $? -eq 0 ]
 do
 
-	sleep 2
+	sleep 1
 	clear
 
 	#Hashed Password matches; Enter Menu Option.
@@ -42,7 +33,7 @@ do
 	echo     "  4. Calculator"
 	echo     "  5. Create Week Folders"
 	echo     "  6. Check Filenames"
-	echo     "  7. Download Data"
+	echo     "  7. Download & Cleanse Data"
 	echo -e  "  8. Exit${NORMAL}"
 
 	read -rp "Option [1-8]: " option
