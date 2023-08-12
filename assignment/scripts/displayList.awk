@@ -9,7 +9,7 @@ BEGIN {
     NORMAL="\033[0m";
 
     print "____________________________________________________________________________________________________";
-    printf("| %sName%s                                               | %sBreach Date%s         | %sAccounts Impacted%s     |\n", BLUE, NORMAL, BLUE, NORMAL, BLUE, NORMAL);
+    printf("| %sName%s                                               | %sBreach Date%s          | %sAccounts Impacted%s    |\n", BLUE, NORMAL, BLUE, NORMAL, BLUE, NORMAL);
     print "____________________________________________________________________________________________________";
 }
 
