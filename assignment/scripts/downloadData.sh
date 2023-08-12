@@ -11,6 +11,11 @@
 url="https://haveibeenpwned.com/PwnedWebsites"
 location="../files"
 
+#Constants
+RED="\033[31m"
+NORMAL="\033[0m"
+
+
 #Test for Valid URL.
 wget -q --spider "$url"
 
