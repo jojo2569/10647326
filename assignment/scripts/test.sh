@@ -6,19 +6,4 @@
 # Date Modified: 12-Aug-2023
 # Author       : Joe Velardi
 
-file="../files/tempData.txt"
-
-i=1
-while read -r line; do
-
-    if [ $((i%5)) != 0 ]
-    then
-        echo -e -n "$line|" >> cleansed2.txt
-    else 
-        echo -e "$line" >> cleansed2.txt
-
-    fi
-    ((i++))
-
-
-done < $file 
+echo -e "Short &#201;dition" | base64 -decode

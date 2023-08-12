@@ -8,31 +8,37 @@
 
 
 #Variables
-source "./variables.sh"
+source variables.sh
 
-#url="https://haveibeenpwned.com/PwnedWebsites"
-#location="../files"
 
 #Constants
-source "./constants.sh"
+source constants.sh
 
+
+#House Cleaning
+rm -f PwnedWebsites
 
 #Test for Valid URL.
 wget -q --spider "$url"
+
 
 #Valid URL/File Location
 if [ "$?" -eq 0 ]
 then
      
-    wget -qP "$location" "$url"     			        #Gets File and Copies to the Above Location.
+    #Gets File and Copies to the Above Location.
+    wget -qP "$location" "$url"
 
-    doc=$(echo -e "$url" | awk -F"/" '{print $NF}')     #Get Document name from URL.
+    #Get Filename from URL
+    doc=$(echo -e "$url" | awk -F"/" '{print $NF}')
     
     #Display Output of Downloaded Content.
     echo -e "\nFile Downloaded Successfully ..." && ls -al "$location"/"$doc" --color=auto && echo -e "\n"
     sleep 2
 
-    $(./cleanseData.sh > ../)
+    #Run Data Cleaning
+    $(./cleanseData.sh)
+    echo -e "\nFData Cleansing Completed ...\n"
 
 else
     echo -e "\n${RED}Invalid URL ...${NORMAL}\n"
