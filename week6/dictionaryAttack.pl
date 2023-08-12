@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+
 use Digest::SHA qw(sha256_hex);
 
 #read the password hash
