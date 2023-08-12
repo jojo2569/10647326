@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
-# Purpose      : {purpose}
+# Purpose      : Brute Force Attack Algorythm.
 # Filename     : brute.py
 # Date Created : 07-Aug-2023
-# Date Modified: 07-Aug-2023
+# Date Modified: 11-Aug-2023
 # Author       : Joe Velardi
 
 
