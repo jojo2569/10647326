@@ -34,4 +34,6 @@ dataTarget="../files/cleansedData.txt"
 #sed [2] Remove All Content After <div class="row breachListLegend"> tag.
 #sed [3] Strip All <tags>
 #sed [4] Remove 'Permalink' instances.
-sed -n '/<h3>/,$p' < $dataSource | sed '/<div class="row breachListLegend">/,$d' | sed -e 's/<[^>]*>//g' | sed '/Permalink/d' | sed '/\n\n\n\n\n\n\n\n\n/d'
+#sed [5] Remove Repeating Line Breaks.
+sed -n '/<h3>/,$p' < $dataSource | sed '/<div class="row breachListLegend">/,$d' | sed -e 's/<[^>]*>//g' | sed '/Permalink/d' | sed -z 's/\n\n\n\n\n\n\n\n\n/ /g'
+
