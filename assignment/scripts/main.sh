@@ -7,23 +7,19 @@
 # Author       : Joe Velardi
 
 
-#Constants
-source "./core/constants.sh"
-
-
-#Variables
-source "./core/variables.sh"
+#Data Sources.
+source "../core/constants.sh"
+source "../core/variables.sh"
 
 
 #Enter Valid Password to Commence.
-#./scripts/passwordChecker.sh
+./passwordChecker.sh
+
 
 #Loop Through Menu.
 while [ $? -eq 0 ]
 do
 
-	sleep 1
-	clear
 
 	#Hashed Password matches; Enter Menu Option.
 	echo -e  "\n${GREEN}MEGA MENU. Enter an Option.${BLUE}"

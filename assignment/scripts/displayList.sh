@@ -7,11 +7,8 @@
 # Author       : Joe Velardi
 
 
-#Constants
+#Data Sources.
 source "../core/constants.sh"
-
-
-#Variables
 source "../core/variables.sh"
 
 

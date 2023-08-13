@@ -1,0 +1,11 @@
+ECU: CYB6004.1 Cyber Security: Scripting Languages
+
+Preface
+This script is designed to pull data from a site containing a list of PWNED Websites, 
+showcasing when it occurred, the number of users impacted, and the category of 
+services it also impacted. Navigation will be through a menu system.
+
+How To Use This Application
+The application is password protected, and for your convenience the default password is 
+foo-bar. You will need to successfully enter the correct password to proceed. Once you 
+have passed this step, you will encounter a menu to navigate your way through the application.
