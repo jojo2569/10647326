@@ -15,8 +15,9 @@ source "../core/constants.sh"
 source "../core/variables.sh"
 
 
-#House Cleaning
-rm -f PwnedWebsites
+#House Cleaning.
+rm -f $dataSource
+
 
 #Test for Valid URL.
 wget -q --spider "$url"
@@ -27,18 +28,19 @@ if [ "$?" -eq 0 ]
 then
      
     #Gets File and Copies to the Above Location.
-    wget -qP "$location" "$url"
+    wget -qP "$dataLocation" "$url"
 
     #Get Filename from URL
     doc=$(echo -e "$url" | awk -F"/" '{print $NF}')
     
     #Display Output of Downloaded Content.
-    echo -e "\nFile Downloaded Successfully ..." && ls -al "$location"/"$doc" --color=auto && echo -e "\n"
+    echo -e "\nFile Downloaded Successfully ..." && ls -al "$dataSource" --color=auto
     sleep 2
 
     #Run Data Cleansing.
     $(./cleanseData.sh)
-    echo -e "\nFData Cleansing Completed ...\n"
+    entries=$(wc -l $dataCleansed | grep -o "^\w*\b")
+    echo -e "\nData Cleansing Completed ($entries Entries) ..." && ls -al "$dataCleansed" --color=auto
 
 else
     echo -e "\n${RED}Invalid URL ...${NORMAL}\n"

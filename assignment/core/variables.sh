@@ -1,9 +1,9 @@
 #Variables
 
-url="https://haveibeenpwned.com/PwnedWebsites"              #URL Location
-location="../data"                                          #File Location
+url="https://haveibeenpwned.com/PwnedWebsites"
 
-dataScratch="../data/tempData.txt"
+
+dataLocation="../data"
 dataSource="../data/PwnedWebsites"
-dataTarget="../data/cleansedData.txt"
 dataCleansed="../data/cleansedData.txt"
+dataScratch="../data/tempData.txt"

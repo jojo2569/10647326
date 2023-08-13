@@ -26,5 +26,5 @@ source "../core/variables.sh"
 #grep . ../files/test.txt | awk -f  displayList.awk
 
 #sort by date desc
-cat $dataTarget | sort  --field-separator="|" -nk4 -r > $dataScratch
-head -20 $dataScratch | awk -f  displayList.awk
+cat $dataCleansed | sort  --field-separator="|" -nk4 -r > $dataScratch
+head -10 $dataScratch | awk -f displayList.awk

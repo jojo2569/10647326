@@ -13,7 +13,6 @@ source "../core/constants.sh"
 
 #Variables
 source "../core/variables.sh"
-intCounter=1
 
 
 #House Cleaning.
@@ -46,7 +45,7 @@ formatFields() {
 
 		[3]* )
             #Format Date Field.
-			echo -n $(echo -n $(date -d "$2" +'%F') && echo -n "$DELIM") >> $dataTarget ;;
+			echo -n $(echo -n $(date -d "$2" +'%F') && echo -n "$DELIM") >> $dataCleansed ;;
 
 #		[4]* )
 #            #Format Number Field.
@@ -61,6 +60,8 @@ formatFields() {
 
 
 #Loop Through $dataScratch, formatFields.
+intCounter=1
+
 while read -r line; do
 
     formatFields $intCounter "${line[@]}" 
