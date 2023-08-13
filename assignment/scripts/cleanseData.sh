@@ -12,6 +12,10 @@ source variables.sh
 intCounter=1
 
 
+#Constants
+source constants.sh
+
+
 #House Cleaning.
 rm -f $dataTarget
 
@@ -26,7 +30,7 @@ sed 's/Breach date: //g' |                                              #sed [6]
 sed 's/Compromised accounts: //g' |                                     #sed [7] Remove 'Compromised accounts: ' prefix.
 sed 's/Compromised data: //g' |                                         #sed [8] Remove 'Compromised data: ' prefix.
 sed '/^[[:space:]]*$/d' |                                               #sed [9] Remove Blank Lines & Redirect to $dataScratch.
-sed 's/&/\&amp;/g; s/"/\&quot;/g; s/'"'"'/\&#39;/g; s/&#228;/a/g' |     #sed [10] HTML Escae Characters
+sed 's/\&amp/&;/g; s/\&quot/";/g; s/\&#39;/'"'"'/g; s/&#228;/a/g' |     #sed [10] HTML Escae Characters
 sed 's/&#252;/u/g; s/&mdash;/-/g; s/&#224;/a/g; s/&#201;/E/g' |
 sed 's/&#233;/e/g; s/&#241;/n/g' > $dataScratch   
 
@@ -34,11 +38,23 @@ sed 's/&#233;/e/g; s/&#241;/n/g' > $dataScratch
 #Function: addDelimiter
 formatFields() {
 
-    if [ $(($1 % 5)) != 0 ]; then
-        echo -e -n "$2~" >> $dataTarget
-    else 
-        echo -e "$2" >> $dataTarget
-    fi
+	case $(($1 % 5)) in
+		[0]* )
+            #Last Field. No Delimieter Required.
+			echo -e "$DELIM$2" >> $dataTarget ;;
+
+		[3]* )
+            #Format Date Field.
+			echo -n $(echo -n $(date -d "$2" +'%F') && echo -n "$DELIM") >> $dataTarget ;;
+
+		[4]* )
+            #Format Number Field.
+			echo -n $2 | sed 's/,//g' >> $dataTarget ;;
+
+		* )
+			echo -e -n "$2$DELIM" >> $dataTarget
+
+	esac
 
 }
 
@@ -52,5 +68,5 @@ while read -r line; do
 done < $dataScratch
 
 
-#House Cleaning
+#House Cleaning.
 rm -f $dataScratch

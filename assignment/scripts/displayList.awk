@@ -2,7 +2,7 @@
 function printList() {
 }
 BEGIN {
-    FS="~";
+    FS="|";
     BLUE="\033[34m";
     BROWN="\033[033m";
     PURPLE="\033[35m";

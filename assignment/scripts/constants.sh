@@ -13,3 +13,6 @@ NORMAL="\033[0m"
 BG_RED="\033[101m"
 BG_GREEN="\033[102m"
 BG_WHITE="\033[107m"
+
+#Field Delimiter
+DELIM="|"
