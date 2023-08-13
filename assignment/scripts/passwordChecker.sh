@@ -27,7 +27,7 @@ do
     echo -n "$password" | sha256sum --check --status $secretPassword
 
     #Validate if Password is Correct, or Not.
-    if [ $? -eq 0 ] ; then
+    if  [ $? -eq 0 ]; then
 
         # Password Matches.
         echo -e "\n\n${GREEN}Access Granted. One Moment ...${NORMAL}"
@@ -37,7 +37,7 @@ do
 
         #Password Does Not Match. Try Again or Exit.
         echo -e  "\n\n${RED}Access Denied. ${NORMAL}\n"
-        read -rp "Press Enter to Continue, or Type 'exit' to Quit :" option
+        read -rp "Press Enter to Continue, or Type 'exit' to Quit: " option
 
         isExit=$(echo "$option" | tr '[:upper:]' '[:lower:]')
 

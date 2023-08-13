@@ -20,55 +20,37 @@ source "../core/variables.sh"
 while [ $? -eq 0 ]
 do
 
-
-	#Hashed Password matches; Enter Menu Option.
-	echo -e  "\n${GREEN}MEGA MENU. Enter an Option.${BLUE}"
-	echo     "  1. View Content Data"
-	echo     "  2. View Content Graphs"
-	echo     "  3. Set a Password"
-	echo     "  4. Calculator"
-	echo     "  5. Create Week Folders"
-	echo     "  6. Check Filenames"
-	echo     "  7. Download & Cleanse Data"
-	echo -e  "  8. Exit${NORMAL}"
-
-	read -rp "Option [1-8]: " option
-
 	clear
+
+	#Navigation. Enter Menu Option.
+	echo -e  "\n${GREEN}MAIN Menu. Enter an Option.${BLUE}"
+	echo     "  1. View PWNED Data"
+	echo     "  2. View PWNED Graphs"
+	echo     "  3. Admin Tasks"
+	echo -e  "  4. Exit${NORMAL}"
+
+	read -rp "Option [1-4]: " option
 
 	case $option in
 		[1]* )
-			echo "" ;;
+			echo "1" ;;
 
 		[2]* )
-			echo "" ;;
+			echo "2" ;;
 
 		[3]* )
-			.echo "" ;;
+			echo "3" ;;
 
 		[4]* )
-			echo "" ;;
-
-		[5]* )
-			echo "" ;;
-
-		[6]* )
-			echo "" ;;
-
-		[7]* )
-			echo "" ;;
-
-		[8]* )
 			#Exit.
-			exit 0 ;;
+			clear
+			break ;;
 
 		* )
 			#Invalid Entry.
-			echo -e "\n${RED}Invalid Enty. Exiting ...${NORMAL}"
+			echo -e "\n${RED}Invalid Entry. Try Again ...${NORMAL}"
 			sleep 1
 
 	esac
 
 done
-
-exit 0
