@@ -26,19 +26,15 @@ do
 
 	read -rp "Option [1-3, or 9]: " option
 
-    clear
-
 	case $option in
 		[1]* )
-			cat $dataCleansed | awk -f displayList.awk ;;
+			./downloadData.sh ;;
 
 		[2]* )
-			cat $dataCleansed | sort  --field-separator="$DELIM" -k3 -r > $dataScratch
-            head -20 $dataScratch | awk -f displayList.awk ;;
+			echo "2" ;;
 
 		[3]* )
-			cat $dataCleansed | sort  --field-separator="$DELIM" -nk4 -r > $dataScratch
-            head -20 $dataScratch | awk -f displayList.awk ;;
+			echo "3" ;;
 
 		[9]* )
 			#Exit.

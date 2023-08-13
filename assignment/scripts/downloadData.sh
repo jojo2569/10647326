@@ -3,7 +3,7 @@
 # Purpose      : Download Web Data.
 # Filename     : downloadData.sh
 # Date Created : 12-Aug-2023
-# Date Modified: 12-Aug-2023
+# Date Modified: 13-Aug-2023
 # Author       : Joe Velardi
 
 
@@ -23,6 +23,8 @@ wget -q --spider "$url"
 #Valid URL/File Location
 if [ "$?" -eq 0 ]
 then
+
+    clear
      
     #Gets File and Copies to the Above Location.
     wget -qP "$dataLocation" "$url"
@@ -31,13 +33,14 @@ then
     doc=$(echo -e "$url" | awk -F"/" '{print $NF}')
     
     #Display Output of Downloaded Content.
+    echo -e "\n${GREEN}Downloading Data. One Moment ...${NORMAL}"
     echo -e "\nFile Downloaded Successfully ..." && ls -al "$dataSource" --color=auto
-    sleep 2
 
     #Run Data Cleansing.
+    echo -e "\n${GREEN}Cleansing Data. One Moment ...${NORMAL}"
     $(./cleanseData.sh)
     entries=$(wc -l $dataCleansed | grep -o "^\w*\b")
-    echo -e "\nData Cleansing Completed ($entries Entries) ..." && ls -al "$dataCleansed" --color=auto
+    echo -e "\nData Cleansing Completed ($entries Entries) ..." && ls -al "$dataCleansed" --color=auto && echo -e "\n"
 
 else
     echo -e "\n${RED}Invalid URL ...${NORMAL}\n"
