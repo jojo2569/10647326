@@ -39,17 +39,18 @@ sed 's/&#233;/e/g; s/&#241;/n/g' > $dataScratch
 formatFields() {
 
 	case $(($1 % 5)) in
+
 		[0]* )
             #Last Field. No Delimieter Required.
-			echo -e "$DELIM$2" >> $dataTarget ;;
+			echo -e "$2" >> $dataTarget ;;
 
 		[3]* )
             #Format Date Field.
 			echo -n $(echo -n $(date -d "$2" +'%F') && echo -n "$DELIM") >> $dataTarget ;;
 
-		[4]* )
-            #Format Number Field.
-			echo -n $2 | sed 's/,//g' >> $dataTarget ;;
+#		[4]* )
+#            #Format Number Field.
+#			echo -n $2 | sed 's/,//g' >> $dataTarget ;;
 
 		* )
 			echo -e -n "$2$DELIM" >> $dataTarget
