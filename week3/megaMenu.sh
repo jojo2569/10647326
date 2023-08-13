@@ -76,7 +76,7 @@ do
 
 		* )
 			#Invalid Entry.
-			echo -e "\n${RED}Invalid Enty. Exiting ...${NORMAL}"
+			echo -e "\n${RED}Invalid Entry. Exiting ...${NORMAL}"
 			sleep 1
 
 	esac
