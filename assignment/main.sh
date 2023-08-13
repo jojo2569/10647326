@@ -8,11 +8,11 @@
 
 
 #Constants
-source "./scripts/constants.sh"
+source "./core/constants.sh"
 
 
 #Variables
-source "./scripts/variables.sh"
+source "./core/variables.sh"
 
 
 #Enter Valid Password to Commence.

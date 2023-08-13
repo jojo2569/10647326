@@ -14,5 +14,9 @@ BG_RED="\033[101m"
 BG_GREEN="\033[102m"
 BG_WHITE="\033[107m"
 
+#Arrows
+UP=$(echo $'\U2191')
+DN=$(echo $'\U2193')
+
 #Field Delimiter
 DELIM="|"

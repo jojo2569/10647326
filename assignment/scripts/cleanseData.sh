@@ -7,42 +7,42 @@
 # Author       : Joe Velardi
 
 
+#Constants
+source "../core/constants.sh"
+
+
 #Variables
-source variables.sh
+source "../core/variables.sh"
 intCounter=1
 
 
-#Constants
-source constants.sh
-
-
 #House Cleaning.
-rm -f $dataTarget
+rm -f $dataCleansed
 
 
 #Data Cleansing.
-sed -n -e '/<h3>/,$p' < $dataSource |                                   #sed [1] Remove All Content Priot to <h3> tag
+sed -n -e '/<h3>/,$p' < $dataSource |                                   #sed [1] Remove All Content Priot to <h3> tag.
 sed '/<div class="row breachListLegend">/,$d' |                         #sed [2] Remove All Content After <div class="row breachListLegend"> tag.
-sed -e 's/<[^>]*>//g' |                                                 #sed [3] Strip All <tags>
+sed -e 's/<[^>]*>//g' |                                                 #sed [3] Strip All <tags>.
 sed '/Permalink/d' |                                                    #sed [4] Remove 'Permalink' instances.
 sed '/Date added to HIBP/d' |                                           #sed [5] Remove 'Date added to HIBP' instances.
 sed 's/Breach date: //g' |                                              #sed [6] Remove 'Breach Date: ' prefix.
 sed 's/Compromised accounts: //g' |                                     #sed [7] Remove 'Compromised accounts: ' prefix.
 sed 's/Compromised data: //g' |                                         #sed [8] Remove 'Compromised data: ' prefix.
 sed '/^[[:space:]]*$/d' |                                               #sed [9] Remove Blank Lines & Redirect to $dataScratch.
-sed 's/\&amp/&;/g; s/\&quot/";/g; s/\&#39;/'"'"'/g; s/&#228;/a/g' |     #sed [10] HTML Escae Characters
+sed 's/\&amp;/\&/g; s/&quot/";/g; s/&#39;/'"'"'/g; s/&#228;/a/g' |      #sed [10] Cleanse HTML Escape Characters.
 sed 's/&#252;/u/g; s/&mdash;/-/g; s/&#224;/a/g; s/&#201;/E/g' |
-sed 's/&#233;/e/g; s/&#241;/n/g' > $dataScratch   
+sed 's/&#233;/e/g; s/&#241;/n/g' > $dataScratch                         #Pump out Reults to a Temporary File.
 
 
-#Function: addDelimiter
+#Format Fields; Add Delimiters.
 formatFields() {
 
 	case $(($1 % 5)) in
 
 		[0]* )
             #Last Field. No Delimieter Required.
-			echo -e "$2" >> $dataTarget ;;
+			echo -e "$2" >> $dataCleansed ;;
 
 		[3]* )
             #Format Date Field.
@@ -53,7 +53,7 @@ formatFields() {
 #			echo -n $2 | sed 's/,//g' >> $dataTarget ;;
 
 		* )
-			echo -e -n "$2$DELIM" >> $dataTarget
+			echo -e -n "$2$DELIM" >> $dataCleansed
 
 	esac
 

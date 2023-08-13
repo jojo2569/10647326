@@ -7,12 +7,12 @@
 # Author       : Joe Velardi
 
 
-#Variables
-source variables.sh
-
-
 #Constants
-source constants.sh
+source "../core/constants.sh"
+
+
+#Variables
+source "../core/variables.sh"
 
 
 #House Cleaning
@@ -36,7 +36,7 @@ then
     echo -e "\nFile Downloaded Successfully ..." && ls -al "$location"/"$doc" --color=auto && echo -e "\n"
     sleep 2
 
-    #Run Data Cleaning
+    #Run Data Cleansing.
     $(./cleanseData.sh)
     echo -e "\nFData Cleansing Completed ...\n"
 
