@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Purpose      : Assessment #4
+# Purpose      : Assessment #4. Main Entry.
 # Filename     : main.sh
 # Date Created : 12-Aug-2023
 # Date Modified: 12-Aug-2023
@@ -27,21 +27,21 @@ do
 	echo     "  1. View PWNED Data"
 	echo     "  2. View PWNED Graphs"
 	echo     "  3. Admin Tasks"
-	echo -e  "  4. Exit${NORMAL}"
+	echo -e  "  9. Exit${NORMAL}"
 
-	read -rp "Option [1-4]: " option
+	read -rp "Option [1-3, or 9]: " option
 
 	case $option in
 		[1]* )
-			echo "1" ;;
+			./menuData.sh ;;
 
 		[2]* )
 			echo "2" ;;
 
 		[3]* )
-			echo "3" ;;
+			./menuAdmin.sh ;;
 
-		[4]* )
+		[9]* )
 			#Exit.
 			clear
 			break ;;
