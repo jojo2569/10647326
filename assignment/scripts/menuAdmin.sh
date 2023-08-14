@@ -35,7 +35,8 @@ do
 
 		[3]* )
 			echo -n "$defaultPassword" > $secretPassword
-			echo -e "\nDefault Password Has Been Reset ..." ;;
+			echo -e "\nDefault Password Has Been Reset ..." 
+			sleep 2 ;;
 
 		[9]* )
 			#Exit.
@@ -49,6 +50,6 @@ do
 
 	esac
 
-    read -rp "Press Any Key to Continue ..."
+
 
 done

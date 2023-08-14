@@ -1,4 +1,4 @@
-#Prints Cleansed Data in Table Format
+#Prints Cleansed Data in Table Format.
 function printList() {
 }
 BEGIN {

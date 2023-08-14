@@ -37,8 +37,11 @@ then
     #Run Data Cleansing.
     echo -e "\n${GREEN}Cleansing Data. One Moment ...${NORMAL}"
     $(./cleanseData.sh)
+    
     entries=$(wc -l $dataCleansed | grep -o "^\w*\b")
     echo -e "\nData Cleansing Completed ($entries Entries) ..." && ls -al "$dataCleansed" --color=auto && echo -e "\n"
+
+    read -rp "Press Any Key to Continue ..."
 
 else
     echo -e "\n${RED}Invalid URL ...${NORMAL}\n"

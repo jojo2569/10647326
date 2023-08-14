@@ -29,10 +29,11 @@ do
     echo -e "\n${GREEN}Password Change. Criteria:${NORMAL}"
     echo -e " - Minimum 8 Characters in Length."
     echo -e " - At Least 1x Upper, 1x Lower, 1x Numeric, 1x Special Character.${NORMAL}\n"
-    read -rsp "Please Enter Your Password: " password
+    read -rsp "Please Enter Your Password or Type 'exit' to Quit: " password
 
-    #Exit Gracefully.
-    if [ $password == "exit" ]; then clear; break ; fi
+    #Exit Gracefully.        
+    isExit=$(echo "$password" | tr '[:upper:]' '[:lower:]')
+    if [ "$isExit" == "exit" ]; then clear; break; fi
 
     #Check password Complexity.
     if [ ${#password} -ge $hasMin ] && [[ $password == $hasNumber ]] && [[ $password == $hasUpper ]] && 
