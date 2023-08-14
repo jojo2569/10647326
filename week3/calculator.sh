@@ -11,7 +11,7 @@
 RED="\033[31m"
 GREEN="\033[32m"
 BLUE="\033[34m"
-PURPLE="\033[35m"
+MAGENTA="\033[35m"
 NORMAL="\033[0m"
 
 while [ "$?" -eq 0 ] ; do
@@ -50,7 +50,7 @@ while [ "$?" -eq 0 ] ; do
 			;;
 		[4]* ) 
 			sum=$(echo "$val1 / $val2" | bc)
-			echo -e "\n${PURPLE}Answer: $val1 / $val2 = $sum\n" 
+			echo -e "\n${MAGENTA}Answer: $val1 / $val2 = $sum\n" 
 			;;
 		[5]* )
 			echo -e "\nExiting ...\n"
