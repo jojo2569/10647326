@@ -11,7 +11,7 @@
 RED="\033[31m"
 GREEN="\033[32m"
 BLUE="\033[34m"
-PURPLE="\033[35m"
+MAGENTA="\033[35m"
 NORMAL="\033[0m"
 MIN=1
 MAX=100
@@ -58,7 +58,7 @@ evaluateNumber() {
         elif [[ "$guess" -ge "$ANSWER" && "$guess" -le "$MAX" ]]
         then         
                 if [ "$guess" -le "$highest" ]; then highest=$guess; fi
-                echo -e "\n${PURPLE}Too High! $(getRange $lowest $highest)${NORMAL}\n"
+                echo -e "\n${MAGENTA}Too High! $(getRange $lowest $highest)${NORMAL}\n"
 
         #Catch for Out-of-Bound.
         else
