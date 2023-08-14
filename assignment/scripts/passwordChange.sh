@@ -31,8 +31,8 @@ do
     echo -e " - At Least 1x Upper, 1x Lower, 1x Numeric, 1x Special Character.${NORMAL}\n"
     read -rsp "Please Enter Your Password: " password
 
-    Exit Gracefully.
-    if [[ $password == "[Ee]xit"]]; then break ; fi
+    #Exit Gracefully.
+    if [ $password == "exit" ]; then clear; break ; fi
 
     #Check password Complexity.
     if [ ${#password} -ge $hasMin ] && [[ $password == $hasNumber ]] && [[ $password == $hasUpper ]] && 
