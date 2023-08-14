@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Purpose      : Sub-Menu to Display Admin Tasks..
+# Purpose      : Sub-Menu to Display Admin Tasks.
 # Filename     : menuAdmin.sh
 # Date Created : 13-Aug-2023
 # Date Modified: 13-Aug-2023
@@ -31,10 +31,16 @@ do
 			./downloadData.sh ;;
 
 		[2]* )
-			echo "2" ;;
+			# Get Password (Secretly).
+			read -rsp "Please Enter Your Password: " password
+
+			#Redirect SHA Password to Folder Location.
+			echo -n "$password" | sha256sum > $secretPassword
+			echo -e "\nNew Password Has Been Set ..." ;;
 
 		[3]* )
-			echo "3" ;;
+			echo -n "$defaultPassword" > $secretPassword
+			echo -e "\nDefault Password Has Been Reset ..." ;;
 
 		[9]* )
 			#Exit.

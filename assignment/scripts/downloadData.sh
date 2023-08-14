@@ -26,14 +26,12 @@ then
 
     clear
      
-    #Gets File and Copies to the Above Location.
+    #Gets File and Makes a Local Copy.
+    echo -e "\n${GREEN}Downloading Data. One Moment ...${NORMAL}"
     wget -qP "$dataLocation" "$url"
 
-    #Get Filename from URL
+    #Get Filename from URL and Displays Content
     doc=$(echo -e "$url" | awk -F"/" '{print $NF}')
-    
-    #Display Output of Downloaded Content.
-    echo -e "\n${GREEN}Downloading Data. One Moment ...${NORMAL}"
     echo -e "\nFile Downloaded Successfully ..." && ls -al "$dataSource" --color=auto
 
     #Run Data Cleansing.

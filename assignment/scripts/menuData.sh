@@ -11,6 +11,15 @@
 source "../core/constants.sh"
 source "../core/variables.sh"
 
+
+#Local Variables.
+menuItem1="Display Full PWNED Website Data"
+menuItem2="Top 20 by Most Recent PWNED Websites"
+menuItem3="Top 20 by Most Compromised Users"
+menuItem4="Top 20 by Least Compromised Users"
+menuItem5="Search PWNED Website Detail"
+
+
 #Loop Through Menu.
 while [ $? -eq 0 ]
 do
@@ -19,11 +28,11 @@ do
 
 	#Navigation. Enter Menu Option.
 	echo -e  "\n${GREEN}View PWNED Data. Enter an Option.${BLUE}"
-	echo     "  1. Display Full PWNED Data"
-	echo     "  2. Top 20 - by Most Recent PWNED Websites"
-	echo     "  3. Top 20 - by Most Compromised Users"
-    echo     "  4. Top 20 - by Least Compromised Users"
-    echo     "  5. Search PWNED Website Detail"
+	echo     "  1. $menuItem1"
+	echo     "  2. $menuItem2"
+	echo     "  3. $menuItem3"
+    echo     "  4. $menuItem4"
+    echo     "  5. $menuItem5"
 	echo -e  "  9. Back${NORMAL}"
 
 	read -rp "Option [1-5, or 9]: " option
@@ -32,19 +41,19 @@ do
 
 	case $option in
 		[1]* )
-			cat $dataCleansed | awk -f displayList.awk ;;
+			cat $dataCleansed | awk -v header="$menuItem1" -f displayList.awk ;;
 
 		[2]* )
 			cat $dataCleansed | sort  --field-separator="$DELIM" -k3 -r > $dataScratch
-            head -20 $dataScratch | awk -f displayList.awk ;;
+            head -20 $dataScratch | awk -v header="$menuItem2" -f displayList.awk ;;
 
 		[3]* )
 			cat $dataCleansed | sort  --field-separator="$DELIM" -nk4 -r > $dataScratch
-            head -20 $dataScratch | awk -f displayList.awk ;;
+            head -20 $dataScratch | awk -v header="$menuItem3" -f displayList.awk ;;
 
 		[4]* )
 			cat $dataCleansed | sort  --field-separator="$DELIM" -nk4 > $dataScratch
-            head -20 $dataScratch | awk -f displayList.awk ;;
+            head -20 $dataScratch | awk -v header="$menuItem4" -f displayList.awk ;;
 
 		[5]* )
 			echo "5" ;;
