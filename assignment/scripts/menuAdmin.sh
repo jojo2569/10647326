@@ -31,12 +31,7 @@ do
 			./downloadData.sh ;;
 
 		[2]* )
-			# Get Password (Secretly).
-			read -rsp "Please Enter Your Password: " password
-
-			#Redirect SHA Password to Folder Location.
-			echo -n "$password" | sha256sum > $secretPassword
-			echo -e "\nNew Password Has Been Set ..." ;;
+			./passwordChange.sh ;;
 
 		[3]* )
 			echo -n "$defaultPassword" > $secretPassword

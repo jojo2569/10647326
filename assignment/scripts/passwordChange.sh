@@ -3,7 +3,7 @@
 # Purpose      : Change Password.
 # Filename     : passwordChange.sh
 # Date Created : 13-Aug-2023
-# Date Modified: 13-Aug-2023
+# Date Modified: 14-Aug-2023
 # Author       : Joe Velardi
 
 
@@ -11,9 +11,54 @@
 source "../core/constants.sh"
 source "../core/variables.sh"
 
-# Get Password (Secretly).
-read -rsp "Please Enter Your Password: " password
+#Local Variables.
+hasMin=8
+hasLower="*[a-z]*"
+hasUpper="*[A-Z]*"
+hasNumber="*[0-9]*"
+hasSpecial="*[#?!@$\%^\&*-]*"
 
-#Redirect SHA Password to Folder Location.
-echo -n "$password" | sha256sum > $secretPassword
-echo -e "\n\nThanks, All Done.\n"
+
+#Main
+while true
+do
+
+    clear
+
+    # Get Password Routine.
+    echo -e "\n${GREEN}Password Change. Criteria:${NORMAL}"
+    echo -e " - Minimum 8 Characters in Length."
+    echo -e " - At Least 1x Upper, 1x Lower, 1x Numeric, 1x Special Character.${NORMAL}\n"
+    read -rsp "Please Enter Your Password: " password
+
+    Exit Gracefully.
+    if [[ $password == "[Ee]xit"]]; then break ; fi
+
+    #Check password Complexity.
+    if [ ${#password} -ge $hasMin ] && [[ $password == $hasNumber ]] && [[ $password == $hasUpper ]] && 
+        [[ $password == $hasLower ]] && [[ $password == $hasSpecial ]] 
+    then 
+        #Save Updated Password.
+        echo -n "$password" | sha256sum > $secretPassword
+        echo -e "\n\nThanks. Password Has Been Updated.\n"
+        sleep 2
+        break
+
+    else
+        #Password Does Not Meet Password Complexity Criteria.
+        clear
+        echo -e "\n${GREEN}Password Change. ${LRED}Complexity FAILED:\n${RED}"
+        
+        if [ ${#password} -lt $hasMin     ];  then echo -e " - Password Does Not Meet the Minimum Length of 8 Characters."     ; fi
+        if [[ $password   !=  $hasLower   ]]; then echo -e " - Password Does Not Have at Least 1 Lower Case [a-z] Character."  ; fi
+        if [[ $password   !=  $hasUpper   ]]; then echo -e " - Password Does Not Have at Least 1 Upper Case [A-Z] Character."  ; fi
+        if [[ $password   !=  $hasNumber  ]]; then echo -e " - Password Does Not Have at Least 1 Numeric [0-9] Character."     ; fi
+        if [[ $password   !=  $hasSpecial ]]; then echo -e " - Password Does Not Have at Least 1 Special [!@#$%^&] Character." ; fi
+
+        echo -e "${NORMAL}"
+        read -p "Press Any Key to Try Again ..."
+
+    fi
+
+done 
+
