@@ -3,13 +3,31 @@
 # Purpose      : Sub-Menu to Display Data Tables.
 # Filename     : menuData.sh
 # Date Created : 13-Aug-2023
-# Date Modified: 13-Aug-2023
+# Date Modified: 15-Aug-2023
 # Author       : Joe Velardi
 
 
 #Data Sources.
 source "../core/constants.sh"
 source "../core/variables.sh"
+
+
+#Function; Display List in Tabular Format.
+displayDataList() {
+
+	clear
+
+	if [ $1 == true ]
+	then
+		cat $2 | awk -v header="$3" -f $4 | more
+	else 
+		cat $2 | sort  --field-separator="$DELIM" $5 $6 > $dataScratch
+		head -20 $dataScratch | awk -v header="$3" -f $4
+	fi
+
+	read -rp "Press the Enter Key to Continue ..."
+
+}
 
 
 #Local Variables.
@@ -47,34 +65,27 @@ do
 
 	read -rp "Option [1-9]: " option
 
-    clear
-
 	case $option in
 		[1]* )
-			cat $dataCleansed | awk -v header="$menuItem1" -f displayList.awk | more ;;
+			displayDataList true "$dataCleansed" "$menuItem1" "displayList.awk" ;;
 
 		[2]* )
-			cat $dataCleansed | sort  --field-separator="$DELIM" -k3 -r > $dataScratch
-            head -20 $dataScratch | awk -v header="$menuItem2" -f displayList.awk ;;
+			displayDataList false "$dataCleansed" "$menuItem2" "displayList.awk" "-k3" "-r" ;;
 
 		[3]* )
-			cat $dataCleansed | sort  --field-separator="$DELIM" -nk4 -r > $dataScratch
-            head -20 $dataScratch | awk -v header="$menuItem3" -f displayList.awk ;;
+			displayDataList false "$dataCleansed" "$menuItem3" "displayList.awk" "-nk4" "-r" ;;
 
 		[4]* )
-			cat $dataCleansed | sort  --field-separator="$DELIM" -nk4 > $dataScratch
-            head -20 $dataScratch | awk -v header="$menuItem4" -f displayList.awk ;;
+			displayDataList false "$dataCleansed" "$menuItem4" "displayList.awk" "-nk4" ;;
 
 		[5]* )
-			cat $dataCategory | awk -v header="$menuItem5" -f displayCategory.awk | more ;;
+			displayDataList true "$dataCategory" "$menuItem5" "displayCategory.awk" ;;
 
 		[6]* )
-			cat $dataCategory | sort  --field-separator="$DELIM" -nk1 -r > $dataScratch
-            head -20 $dataScratch | awk -v header="$menuItem6" -f displayCategory.awk ;;
+			displayDataList false "$dataCategory" "$menuItem6" "displayCategory.awk" "-nk1" "-r" ;;
 
 		[7]* )
-			cat $dataCategory | sort  --field-separator="$DELIM" -nk1 > $dataScratch
-            head -20 $dataScratch | awk -v header="$menuItem7" -f displayCategory.awk ;;
+			displayDataList false "$dataCategory" "$menuItem7" "displayCategory.awk" "-nk1" ;;
 
 		[8]* )
 			echo "Hello" ;;
@@ -86,11 +97,9 @@ do
 
 		* )
 			#Invalid Entry.
-			echo -e "\n${RED}Invalid Entry. ${NORMAL}\n\n"
+			echo -e "\n${RED}Invalid Entry. Try Again ...${NORMAL}"
 			sleep 1
 
 	esac
-
-    read -rp "Press the Enter Key to Continue ..."
 
 done
