@@ -25,7 +25,7 @@ displayDataList() {
 		head -20 $dataScratch | awk -v header="$3" -f $4
 	fi
 
-	read -rp "Press the Enter Key to Continue ..."
+	read -rp "Press Enter to Continue ..."
 
 }
 
@@ -63,7 +63,7 @@ do
 	echo     "  -----------------------------------------"
 	echo -e  "  9. Back${NORMAL}\n"
 
-	read -rp "Option [1-9]: " option
+	read -rp "  Option [1-9]: " option
 
 	case $option in
 		[1]* )
@@ -97,7 +97,7 @@ do
 
 		* )
 			#Invalid Entry.
-			echo -e "\n${RED}Invalid Entry. Try Again ...${NORMAL}"
+			echo -e "\n${RED}  Invalid Entry. Try Again ...${NORMAL}"
 			sleep 1
 
 	esac

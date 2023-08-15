@@ -23,13 +23,15 @@ do
 	clear
 
 	#Navigation. Enter Menu Option.
-	echo -e  "\n${GREEN}MAIN Menu. Enter an Option.${BLUE}"
+	echo -e  "\n${GREEN}  MAIN Menu. Enter an Option.${BLUE}"
+	echo     "  -----------------------------------------"
 	echo     "  1. View PWNED Data"
 	echo     "  2. View PWNED Graphs"
 	echo     "  3. Admin Tasks"
-	echo -e  "  9. Exit${NORMAL}"
+	echo     "  -----------------------------------------"
+	echo -e  "  9. Exit${NORMAL}\n"
 
-	read -rp "Option [1-3, or 9]: " option
+	read -rp "  Option [1-3, or 9]: " option
 
 	case $option in
 		[1]* )
@@ -48,7 +50,7 @@ do
 
 		* )
 			#Invalid Entry.
-			echo -e "\n${RED}Invalid Entry. Try Again ...${NORMAL}"
+			echo -e "\n${RED}  Invalid Entry. Try Again ...${NORMAL}"
 			sleep 1
 
 	esac

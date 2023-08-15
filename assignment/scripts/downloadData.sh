@@ -35,15 +35,18 @@ then
     echo -e "\nFile Downloaded Successfully ..." && ls -al "$dataSource" --color=auto
 
     #Run Data Cleansing.
-    echo -e "\n${GREEN}Cleansing Data. One Moment ...${NORMAL}"
+    echo -e "\n${GREEN}Cleansing Data. Two Moments ...${NORMAL}"
     $(./cleanseData.sh)
     
     entries=$(wc -l $dataCleansed | grep -o "^\w*\b")
-    echo -e "\nData Cleansing Completed ($entries Entries) ..." && ls -al "$dataCleansed" --color=auto && echo -e "\n"
+    echo -e "\nData Cleansing Completed ($entries Entries) ..." && ls -al "$dataCleansed" --color=auto
 
-    read -rp "Press Any Key to Continue ..."
+    entries=$(wc -l $dataCategory | grep -o "^\w*\b")
+    echo -e "\nData Category Completed ($entries Entries) ..." && ls -al "$dataCategory" --color=auto && echo -e "\n"
+
+    read -rp "  Press Enter to Continue ..."
 
 else
-    echo -e "\n${RED}Invalid URL ...${NORMAL}\n"
+    echo -e "\n${RED}  Invalid URL ...${NORMAL}\n"
     sleep 2
 fi

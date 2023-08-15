@@ -26,7 +26,7 @@
 5|Credit status information
 1|Customer feedback
 1|Customer interactions
-183|Dates of birth
+184|Dates of birth
 1|Deceased date
 1|Deceased statuses
 1|Delivery instructions
@@ -38,21 +38,21 @@
 2|Drug habits
 1|Eating habits
 10|Education levels
-683|Email addresses
+685|Email addresses
 8|Email messages
 25|Employers
 1|Employment statuses
 1|Encrypted keys
 8|Ethnicities
-4|Family members' names
+5|Family members' names
 7|Family structure
 2|Financial investments
 2|Financial transactions
 1|Fitness levels
 1|Flights taken
-134|Genders
+135|Genders
 96|Geographic locations
-13|Government issued IDs
+14|Government issued IDs
 2|Health insurance information
 5|Historical passwords
 1|HIV statuses
@@ -73,7 +73,7 @@
 15|Marital statuses
 1|Mnemonic phrases
 1|Mothers maiden names
-327|Names
+328|Names
 7|Nationalities
 2|Net worths
 3|Nicknames
@@ -91,9 +91,9 @@
 3|Personal descriptions
 5|Personal health data
 2|Personal interests
-207|Phone numbers
+208|Phone numbers
 1|Photos
-163|Physical addresses
+164|Physical addresses
 8|Physical attributes
 2|PINs
 1|Places of birth

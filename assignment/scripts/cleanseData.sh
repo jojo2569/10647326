@@ -70,10 +70,10 @@ while read -r line; do
 done < $dataScratch
 
 
-
 #A More Graceful Way Needed to Exclude Funky Character Sets.
 cat $dataCleansed | grep  '^[A-Za-z0-9]' > $dataScratch
 cat $dataScratch > $dataCleansed
+
 
 #Creating Category Data With Counts.
 grep . $dataCategory | sort | uniq -c | 						#Find Unique Instances and -c Get Counts.

@@ -18,13 +18,15 @@ do
 	clear
 
 	#Navigation. Enter Menu Option.
-	echo -e  "\n${GREEN}ADMIN Tasks. Enter an Option.${BLUE}"
+	echo -e  "\n${GREEN}  ADMIN Tasks. Enter an Option.${BLUE}"
+	echo     "  -----------------------------------------"
 	echo     "  1. Download & Cleanse Data"
 	echo     "  2. Change Password"
 	echo     "  3. Reset to Default Password"
-	echo -e  "  9. Back${NORMAL}"
+	echo     "  -----------------------------------------"
+	echo -e  "  9. Back${NORMAL}\n"
 
-	read -rp "Option [1-3, or 9]: " option
+	read -rp "  Option [1-3, or 9]: " option
 
 	case $option in
 		[1]* )
@@ -35,7 +37,7 @@ do
 
 		[3]* )
 			echo -n "$defaultPassword" > $secretPassword
-			echo -e "\nDefault Password Has Been Reset ..." 
+			echo -e "\n  Default Password Has Been Reset ..." 
 			sleep 2 ;;
 
 		[9]* )
@@ -45,7 +47,7 @@ do
 
 		* )
 			#Invalid Entry.
-			echo -e "\n${RED}Invalid Entry. ${NORMAL}\n\n"
+			echo -e "\n${RED}  Invalid Entry. ${NORMAL}\n\n"
 			sleep 1
 
 	esac
