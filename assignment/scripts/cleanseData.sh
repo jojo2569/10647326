@@ -14,6 +14,7 @@ source "../core/variables.sh"
 
 #House Cleaning.
 rm -f $dataCleansed
+rm -f $dataCategory
 
 
 #Data Cleansing.
@@ -38,16 +39,17 @@ formatFields() {
 
 		[0]* )
             #Last Field. No Delimieter Required.
-			echo -e "$2" >> $dataCleansed ;;
+			echo -e "$2" >> $dataCleansed 
+
+			#Loop Through Category Field and Separate.
+			IFS=',' read -ra categoryArray <<< "$2"
+			for i in "${categoryArray[@]}"; do
+    			echo -e $i >> $dataCategory
+			done ;;
 
 		[3]* )
             #Format Date Field.
 			echo -n $(echo -n $(date -d "$2" +'%F') && echo -n "$DELIM") >> $dataCleansed ;;
-
-#		[4]* )
-#            #Format Number Field.
-#			echo -n $2 | sed 's/,//g' >> $dataCleansed
-#			echo -n "$DELIM$2$DELIM" >> $dataCleansed ;;
 
 		* )
 			echo -e -n "$2$DELIM" >> $dataCleansed
@@ -68,9 +70,16 @@ while read -r line; do
 done < $dataScratch
 
 
-#TODO - A More Graceful Way to Exclude Funky Character Sets.
+
+#A More Graceful Way Needed to Exclude Funky Character Sets.
 cat $dataCleansed | grep  '^[A-Za-z0-9]' > $dataScratch
 cat $dataScratch > $dataCleansed
+
+#Creating Category Data With Counts.
+grep . $dataCategory | sort | uniq -c | 						#Find Unique Instances and -c Get Counts.
+sed -e 's/^[ \t]*//' | 											#Remove Leading White Spaces.
+sed -r 's/\s+/|/' > $dataScratch								#Replace First Space with a Pipe (|).
+grep . $dataScratch > $dataCategory								#Dump Data into Final Destination.
 
 
 #House Cleaning.

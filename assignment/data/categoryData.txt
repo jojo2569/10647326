@@ -1,0 +1,137 @@
+9|Account balances
+1|Address book contacts
+3|Age groups
+2|Ages
+1|Appointments
+1|Apps installed on devices
+1|Astrological signs
+1|Audio recordings
+9|Auth tokens
+8|Avatars
+7|Bank account numbers
+1|Beauty ratings
+1|Biometric data
+8|Bios
+22|Browser user agent details
+1|Browsing histories
+1|Buying preferences
+1|Career levels
+1|Car ownership statuses
+1|Cellular network names
+1|Charitable donations
+3|Chat logs
+1|Clothing sizes
+2|Credit card CVV
+6|Credit cards
+5|Credit status information
+1|Customer feedback
+1|Customer interactions
+183|Dates of birth
+1|Deceased date
+1|Deceased statuses
+1|Delivery instructions
+13|Device information
+1|Device serial numbers
+1|Device usage tracking data
+5|Drinking habits
+1|Driver's licenses
+2|Drug habits
+1|Eating habits
+10|Education levels
+683|Email addresses
+8|Email messages
+25|Employers
+1|Employment statuses
+1|Encrypted keys
+8|Ethnicities
+4|Family members' names
+7|Family structure
+2|Financial investments
+2|Financial transactions
+1|Fitness levels
+1|Flights taken
+134|Genders
+96|Geographic locations
+13|Government issued IDs
+2|Health insurance information
+5|Historical passwords
+1|HIV statuses
+5|Home ownership statuses
+2|Homepage URLs
+2|IMEI numbers
+2|IMSI numbers
+12|Income levels
+8|Instant messenger identities
+298|IP addresses
+5|Job applications
+25|Job titles
+1|Licence plates
+1|Living costs
+2|Loan information
+1|Login histories
+1|MAC addresses
+15|Marital statuses
+1|Mnemonic phrases
+1|Mothers maiden names
+327|Names
+7|Nationalities
+2|Net worths
+3|Nicknames
+6|Occupations
+1|Parenting plans
+22|Partial credit card data
+5|Partial dates of birth
+2|Partial phone numbers
+6|Passport numbers
+1|Password hints
+538|Passwords
+1|Password strengths
+9|Payment histories
+1|Payment methods
+3|Personal descriptions
+5|Personal health data
+2|Personal interests
+207|Phone numbers
+1|Photos
+163|Physical addresses
+8|Physical attributes
+2|PINs
+1|Places of birth
+1|Political donations
+2|Political views
+35|Private messages
+1|Professional skills
+8|Profile photos
+40|Purchases
+1|Purchasing habits
+1|Races
+1|Recovery email addresses
+4|Relationship statuses
+8|Religions
+1|Reward program balances
+11|Salutations
+1|School grades (class levels)
+13|Security questions and answers
+2|Sexual fetishes
+8|Sexual orientations
+5|Smoking habits
+2|SMS messages
+5|Social connections
+39|Social media profiles
+6|Social security numbers
+17|Spoken languages
+1|Spouses names
+1|Support tickets
+2|Survey results
+1|Taxation records
+5|Time zones
+1|Travel habits
+366|Usernames
+1|User statuses
+5|User website URLs
+1|Utility bills
+6|Vehicle details
+1|Vehicle identification numbers (VINs)
+77|Website activity
+1|Work habits
+1|Years of professional experience

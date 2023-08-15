@@ -13,11 +13,14 @@ source "../core/variables.sh"
 
 
 #Local Variables.
-menuItem1="Display Full PWNED Website Data"
-menuItem2="Top 20 by Most Recent PWNED Websites"
-menuItem3="Top 20 by Most Compromised Users"
-menuItem4="Top 20 by Least Compromised Users"
-menuItem5="Search PWNED Website Detail"
+menuItem1="Full List: PWNED Website Data"
+menuItem2="Top 20: Most Recent PWNED Websites"
+menuItem3="Top 20: Most Compromised Users"
+menuItem4="Top 20: Least Compromised Users"
+menuItem5="Full List: Breaches by Category"
+menuItem6="Top 20: Most Compromised Categories"
+menuItem7="Top 20: Least Compromised Categories"
+menuItem8="Search PWNED Website Detail"
 
 
 #Loop Through Menu.
@@ -27,15 +30,22 @@ do
 	clear
 
 	#Navigation. Enter Menu Option.
-	echo -e  "\n${GREEN}View PWNED Data. Enter an Option.${BLUE}"
+	echo -e  "\n${GREEN}  View PWNED Data. Enter an Option.${BLUE}"
+	echo     "  -----------------------------------------"
 	echo     "  1. $menuItem1"
 	echo     "  2. $menuItem2"
 	echo     "  3. $menuItem3"
     echo     "  4. $menuItem4"
+	echo     "  -----------------------------------------"
     echo     "  5. $menuItem5"
-	echo -e  "  9. Back${NORMAL}"
+	echo     "  6. $menuItem6"
+	echo     "  7. $menuItem7"
+	echo     "  -----------------------------------------"
+	echo     "  8. $menuItem8"
+	echo     "  -----------------------------------------"
+	echo -e  "  9. Back${NORMAL}\n"
 
-	read -rp "Option [1-5, or 9]: " option
+	read -rp "Option [1-9]: " option
 
     clear
 
@@ -56,7 +66,18 @@ do
             head -20 $dataScratch | awk -v header="$menuItem4" -f displayList.awk ;;
 
 		[5]* )
-			echo "5" ;;
+			cat $dataCategory | awk -v header="$menuItem5" -f displayCategory.awk | more ;;
+
+		[6]* )
+			cat $dataCategory | sort  --field-separator="$DELIM" -nk1 -r > $dataScratch
+            head -20 $dataScratch | awk -v header="$menuItem6" -f displayCategory.awk ;;
+
+		[7]* )
+			cat $dataCategory | sort  --field-separator="$DELIM" -nk1 > $dataScratch
+            head -20 $dataScratch | awk -v header="$menuItem7" -f displayCategory.awk ;;
+
+		[8]* )
+			echo "Hello" ;;
 
 		[9]* )
 			#Exit.
@@ -70,6 +91,6 @@ do
 
 	esac
 
-    read -rp "Press Any Key to Continue ..."
+    read -rp "Press the Enter Key to Continue ..."
 
 done
