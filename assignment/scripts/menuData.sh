@@ -41,7 +41,7 @@ do
 
 	case $option in
 		[1]* )
-			cat $dataCleansed | awk -v header="$menuItem1" -f displayList.awk ;;
+			cat $dataCleansed | awk -v header="$menuItem1" -f displayList.awk | more ;;
 
 		[2]* )
 			cat $dataCleansed | sort  --field-separator="$DELIM" -k3 -r > $dataScratch
@@ -73,14 +73,3 @@ do
     read -rp "Press Any Key to Continue ..."
 
 done
-
-
-#grep . ../files/cleansedData.txt | awk -f displayList.awk
-
-#sort by date desc
-#cat ../files/cleansedData.txt | sort  --field-separator="|" -k3 -r > ../files/test.txt
-#grep . ../files/test.txt | awk -f  displayList.awk
-
-#sort by date desc
-#cat $dataCleansed | sort  --field-separator="$DELIM" -nk4 -r > $dataScratch
-#head -10 $dataScratch | awk -f displayList.awk

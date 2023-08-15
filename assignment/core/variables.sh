@@ -8,6 +8,7 @@ dataLocation="../data"
 dataSource="../data/PwnedWebsites"
 dataCleansed="../data/cleansedData.txt"
 dataScratch="../data/tempData.txt"
+dataCategory="../data/categiryData.txt"
 
 secretPassword="../data/secret.txt"
 

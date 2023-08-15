@@ -46,7 +46,8 @@ formatFields() {
 
 #		[4]* )
 #            #Format Number Field.
-#			echo -n $2 | sed 's/,//g' >> $dataTarget ;;
+#			echo -n $2 | sed 's/,//g' >> $dataCleansed
+#			echo -n "$DELIM$2$DELIM" >> $dataCleansed ;;
 
 		* )
 			echo -e -n "$2$DELIM" >> $dataCleansed
@@ -67,7 +68,7 @@ while read -r line; do
 done < $dataScratch
 
 
-#TODO - Better Routine to Exclude Funky Character Sets.
+#TODO - A More Graceful Way to Exclude Funky Character Sets.
 cat $dataCleansed | grep  '^[A-Za-z0-9]' > $dataScratch
 cat $dataScratch > $dataCleansed
 
