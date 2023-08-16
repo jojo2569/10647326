@@ -12,7 +12,7 @@ source "../core/constants.sh"
 source "../core/variables.sh"
 
 
-#Function; Display List in Tabular Format.
+#Display List in Tabular Format.
 displayDataList() {
 
 	clear
@@ -91,7 +91,6 @@ do
 			echo "Hello" ;;
 
 		[9]* )
-			#Exit.
 			clear
 			break ;;
 
