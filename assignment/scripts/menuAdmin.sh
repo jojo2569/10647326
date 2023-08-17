@@ -29,18 +29,18 @@ do
 	read -rp "  Option [1-3, or 9]: " option
 
 	case $option in
-		[1]* )
+		[1] )
 			./downloadData.sh ;;
 
-		[2]* )
+		[2] )
 			./passwordChange.sh ;;
 
-		[3]* )
+		[3] )
 			echo -n "$defaultPassword" > $secretPassword
 			echo -e "\n  Default Password Has Been Reset ..." 
 			sleep 2 ;;
 
-		[9]* )
+		[9] )
 			#Exit.
 			clear
 			break ;;

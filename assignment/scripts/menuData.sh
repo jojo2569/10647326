@@ -18,8 +18,6 @@ resultSet="-20"
 #Enter Search Criteria to Display Detail.
 searchPwnedData() {
 
-	clear
-
 	#Navigation. Search Detail.
 	echo -e  "\n${GREEN}  View PWNED Data. Enter earch Criteria.${NORMAL}"
 	echo     "  -----------------------------------------"
@@ -28,7 +26,16 @@ searchPwnedData() {
 
 	searchResult=$(grep "^${searchCriteria}[^|]*" $dataCleansed | grep $searchCriteria)
 
-	displayDataList 3 "$searchResult" "$menuItem8" "displayList.awk"
+	entries=$(echo "$searchResult" | wc -l)
+
+	clear
+
+	if [ $entries = 1 ]; then
+		echo -e "$searchResult" | awk -f "displayDetail.awk"
+		read
+	else
+		displayDataList 3 "$searchResult" "$menuItem8" "displayList.awk"
+	fi
 
 }
 
@@ -39,16 +46,16 @@ displayDataList() {
 	clear
 
 	case $1 in
-		[1]* )
+		[1] )
 			cat $2 | awk -v header="$3" -f $4 | more 
 				read -rp "Press Enter to Continue ..." ;;
 
-		[2]* )
+		[2] )
 			cat $2 | sort  --field-separator="$DELIM" $5 $6 > $dataScratch
 			head -20 $dataScratch | awk -v header="$3" -f $4 
 				read -rp "Press Enter to Continue ...";;
 
-		[3]* )
+		[3] )
 			echo -e "$2" | head -20 | awk -v header="$3" -f $4 ;;
 
 		* )
@@ -97,31 +104,31 @@ do
 	read -rp "  Option [1-9]: " option
 
 	case $option in
-		[1]* )
+		[1] )
 			displayDataList 1 "$dataCleansed" "$menuItem1" "displayList.awk" ;;
 
-		[2]* )
+		[2] )
 			displayDataList 2 "$dataCleansed" "$menuItem2" "displayList.awk" "-k3" "-r" ;;
 
-		[3]* )
+		[3] )
 			displayDataList 2 "$dataCleansed" "$menuItem3" "displayList.awk" "-nk4" "-r" ;;
 
-		[4]* )
+		[4] )
 			displayDataList 2 "$dataCleansed" "$menuItem4" "displayList.awk" "-nk4" ;;
 
-		[5]* )
+		[5] )
 			displayDataList 1 "$dataCategory" "$menuItem5" "displayCategory.awk" ;;
 
-		[6]* )
+		[6] )
 			displayDataList 2 "$dataCategory" "$menuItem6" "displayCategory.awk" "-nk1" "-r" ;;
 
-		[7]* )
+		[7] )
 			displayDataList 2 "$dataCategory" "$menuItem7" "displayCategory.awk" "-nk1" ;;
 
-		[8]* )
+		[8] )
 			searchPwnedData ;;
 
-		[9]* )
+		[9] )
 			clear
 			break ;;
 
