@@ -1,6 +1,5 @@
 #Prints Cleansed Data in Table Format.
-function printCategory() {
-}
+
 BEGIN {
     FS="|";
     BLUE="\033[34m";

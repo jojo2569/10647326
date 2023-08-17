@@ -11,21 +11,52 @@
 source "../core/constants.sh"
 source "../core/variables.sh"
 
+#Local Variables.
+resultSet="-20"
+
+
+#Enter Search Criteria to Display Detail.
+searchPwnedData() {
+
+	clear
+
+	#Navigation. Search Detail.
+	echo -e  "\n${GREEN}  View PWNED Data. Enter earch Criteria.${NORMAL}"
+	echo     "  -----------------------------------------"
+
+	read -rp "  Enter PWNED Website name: " searchCriteria
+
+	searchResult=$(grep "^${searchCriteria}[^|]*" $dataCleansed | grep $searchCriteria)
+
+	displayDataList 3 "$searchResult" "$menuItem8" "displayList.awk"
+
+}
+
 
 #Display List in Tabular Format.
 displayDataList() {
 
 	clear
 
-	if [ $1 == true ]
-	then
-		cat $2 | awk -v header="$3" -f $4 | more
-	else 
-		cat $2 | sort  --field-separator="$DELIM" $5 $6 > $dataScratch
-		head -20 $dataScratch | awk -v header="$3" -f $4
-	fi
+	case $1 in
+		[1]* )
+			cat $2 | awk -v header="$3" -f $4 | more 
+				read -rp "Press Enter to Continue ..." ;;
 
-	read -rp "Press Enter to Continue ..."
+		[2]* )
+			cat $2 | sort  --field-separator="$DELIM" $5 $6 > $dataScratch
+			head -20 $dataScratch | awk -v header="$3" -f $4 
+				read -rp "Press Enter to Continue ...";;
+
+		[3]* )
+			echo -e "$2" | head -20 | awk -v header="$3" -f $4 ;;
+
+		* )
+			#Invalid Entry.
+			echo -e "\n${RED}  An ERROR Has Occurred. Try Again ...${NORMAL}\n"
+			sleep 1
+
+	esac
 
 }
 
@@ -33,8 +64,8 @@ displayDataList() {
 #Local Variables.
 menuItem1="Full List: PWNED Website Data"
 menuItem2="Top 20: Most Recent PWNED Websites"
-menuItem3="Top 20: Most Compromised Users"
-menuItem4="Top 20: Least Compromised Users"
+menuItem3="Top 20: Most Compromised Breaches"
+menuItem4="Top 20: Least Compromised Breaches"
 menuItem5="Full List: Breaches by Category"
 menuItem6="Top 20: Most Compromised Categories"
 menuItem7="Top 20: Least Compromised Categories"
@@ -67,28 +98,28 @@ do
 
 	case $option in
 		[1]* )
-			displayDataList true "$dataCleansed" "$menuItem1" "displayList.awk" ;;
+			displayDataList 1 "$dataCleansed" "$menuItem1" "displayList.awk" ;;
 
 		[2]* )
-			displayDataList false "$dataCleansed" "$menuItem2" "displayList.awk" "-k3" "-r" ;;
+			displayDataList 2 "$dataCleansed" "$menuItem2" "displayList.awk" "-k3" "-r" ;;
 
 		[3]* )
-			displayDataList false "$dataCleansed" "$menuItem3" "displayList.awk" "-nk4" "-r" ;;
+			displayDataList 2 "$dataCleansed" "$menuItem3" "displayList.awk" "-nk4" "-r" ;;
 
 		[4]* )
-			displayDataList false "$dataCleansed" "$menuItem4" "displayList.awk" "-nk4" ;;
+			displayDataList 2 "$dataCleansed" "$menuItem4" "displayList.awk" "-nk4" ;;
 
 		[5]* )
-			displayDataList true "$dataCategory" "$menuItem5" "displayCategory.awk" ;;
+			displayDataList 1 "$dataCategory" "$menuItem5" "displayCategory.awk" ;;
 
 		[6]* )
-			displayDataList false "$dataCategory" "$menuItem6" "displayCategory.awk" "-nk1" "-r" ;;
+			displayDataList 2 "$dataCategory" "$menuItem6" "displayCategory.awk" "-nk1" "-r" ;;
 
 		[7]* )
-			displayDataList false "$dataCategory" "$menuItem7" "displayCategory.awk" "-nk1" ;;
+			displayDataList 2 "$dataCategory" "$menuItem7" "displayCategory.awk" "-nk1" ;;
 
 		[8]* )
-			echo "Hello" ;;
+			searchPwnedData ;;
 
 		[9]* )
 			clear
