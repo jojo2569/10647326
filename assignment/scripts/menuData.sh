@@ -11,30 +11,32 @@
 source "../core/constants.sh"
 source "../core/variables.sh"
 
-#Local Variables.
-resultSet="-20"
-
 
 #Enter Search Criteria to Display Detail.
-searchPwnedData() {
+displayDataDetail() {
+
+	clear
 
 	#Navigation. Search Detail.
 	echo -e  "\n${GREEN}  View PWNED Data. Enter earch Criteria.${NORMAL}"
 	echo     "  -----------------------------------------"
 
-	read -rp "  Enter PWNED Website name: " searchCriteria
+	read -rp "  Enter PWNED Website name (min. 3 Chars): " searchCriteria
 
-	searchResult=$(grep "^${searchCriteria}[^|]*" $dataCleansed | grep $searchCriteria)
-
-	entries=$(echo "$searchResult" | wc -l)
-
-	clear
-
-	if [ $entries = 1 ]; then
-		echo -e "$searchResult" | awk -f "displayDetail.awk"
-		read
+	if [ ${#searchCriteria} -lt 3 ]; then
+		#Does Not Meet Minimum Search Criteria.
+		echo -e "\n\n  ${RED}Please Enter 3 or More Characters in the Search Field.${NORMAL}\n"
 	else
-		displayDataList 3 "$searchResult" "$menuItem8" "displayList.awk"
+		# Search For Results.
+		searchResult=$(grep "^${searchCriteria}[^|]*" $dataCleansed | grep $searchCriteria)
+
+		if [ "$searchResult" = "" ]; then
+			#No Results Found.
+			echo -e "\n${RED}  No Results Were Found. Try Again ...${NORMAL}\n"
+		else
+			#Display Results.
+			echo -e "$searchResult" | awk -f "displayDetail.awk" | more
+		fi
 	fi
 
 }
@@ -47,23 +49,21 @@ displayDataList() {
 
 	case $1 in
 		[1] )
-			cat $2 | awk -v header="$3" -f $4 | more 
-				read -rp "Press Enter to Continue ..." ;;
+			#Display Full Lists.
+			cat $2 | awk -v header="$3" -f $4 | more  ;;
 
 		[2] )
+			#Display Top Lists.
 			cat $2 | sort  --field-separator="$DELIM" $5 $6 > $dataScratch
-			head -20 $dataScratch | awk -v header="$3" -f $4 
-				read -rp "Press Enter to Continue ...";;
-
-		[3] )
-			echo -e "$2" | head -20 | awk -v header="$3" -f $4 ;;
+			head -20 $dataScratch | awk -v header="$3" -f $4 ;;
 
 		* )
 			#Invalid Entry.
 			echo -e "\n${RED}  An ERROR Has Occurred. Try Again ...${NORMAL}\n"
-			sleep 1
 
 	esac
+
+	#read -rp "Press Enter to Continue ..."
 
 }
 
@@ -126,7 +126,7 @@ do
 			displayDataList 2 "$dataCategory" "$menuItem7" "displayCategory.awk" "-nk1" ;;
 
 		[8] )
-			searchPwnedData ;;
+			displayDataDetail ;;
 
 		[9] )
 			clear
@@ -138,5 +138,7 @@ do
 			sleep 1
 
 	esac
+
+	read -rp "  Press Enter to Continue ..."
 
 done
