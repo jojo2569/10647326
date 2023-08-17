@@ -18,7 +18,7 @@ displayDataDetail() {
 	clear
 
 	#Navigation. Search Detail.
-	echo -e  "\n${GREEN}  View PWNED Data. Enter earch Criteria.${NORMAL}"
+	echo -e  "\n${GREEN}  View PWNED Website Data. Enter Search Criteria.${NORMAL}"
 	echo     "  -----------------------------------------"
 
 	read -rp "  Enter PWNED Website name (min. 3 Chars): " searchCriteria
@@ -86,7 +86,7 @@ do
 	clear
 
 	#Navigation. Enter Menu Option.
-	echo -e  "\n${GREEN}  View PWNED Data. Enter an Option.${BLUE}"
+	echo -e  "\n${GREEN}  View PWNED Website Data. Enter an Option.${BLUE}"
 	echo     "  -----------------------------------------"
 	echo     "  1. $menuItem1"
 	echo     "  2. $menuItem2"

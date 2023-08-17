@@ -2,7 +2,7 @@
 
 BEGIN {
     FS="|";
-  BOLD="\033[1m";  
+    BOLD="\033[1m";  
     BBLUE="\033[1;34m";
     YELLOW="\033[033m";
     BYELLOW="\033[1;033m";
@@ -12,10 +12,12 @@ BEGIN {
 }
 
 {
-    printf("\n\n  %s%s%s\n\n%s\n\n", BYELLOW, $1, NORMAL, $2);
+    printf("\n\n  %s%-22s: %s%s\n", BYELLOW, "Breached Website", NORMAL,$1 );
     printf("  %s%-22s: %s%s\n", BYELLOW, "Breach Date", NORMAL, $3);
     printf("  %s%-22s: %s%'d\n", BYELLOW, "Compromised Accounts", NORMAL, $4);
     printf("  %s%-22s: %s%s\n", BYELLOW, "Compromised Data", NORMAL, $5);
+    printf("\n  %s%s\n\n", NORMAL, $2 );
+
     printf("\n  --------------------------------------------------\n\n");
 }
 

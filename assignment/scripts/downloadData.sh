@@ -44,7 +44,7 @@ then
     entries=$(wc -l $dataCategory | grep -o "^\w*\b")
     echo -e "\nData Category Completed ($entries Entries) ..." && ls -al "$dataCategory" --color=auto && echo -e "\n"
 
-    read -rp "  Press Enter to Continue ..."
+    read -rp "Press Enter to Continue ..."
 
 else
     echo -e "\n${RED}  Invalid URL ...${NORMAL}\n"
