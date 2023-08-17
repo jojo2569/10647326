@@ -13,7 +13,7 @@ BEGIN {
     print("\n__________________________________________________________________________________________");
     printf("| %s%-86s%s |\n", BBLUE, header,  NORMAL);
     print("__________________________________________________________________________________________");
-    printf("| %sName%s                                               | %sBreach Date%s     | %sUsers Impacted%s  |\n", BLUE, NORMAL, BLUE, NORMAL, BLUE, NORMAL);
+    printf("| %sName%s                                               | %sBreach Date%s     | %sBreached Accts%s  |\n", BLUE, NORMAL, BLUE, NORMAL, BLUE, NORMAL);
     print("__________________________________________________________________________________________");
 }
 
