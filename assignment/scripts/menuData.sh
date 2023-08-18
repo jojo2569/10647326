@@ -16,29 +16,42 @@ source "../core/functions.sh"
 #Enter Search Criteria to Display Detail.
 displayDataDetail() {
 
-	displayBanner
+	while true
+	do
 
-	#Navigation. Search Detail.
-	echo -e  "\n${GREEN}  View PWNED Website Data. Enter Search Criteria.${NORMAL}"
-	echo     "  -------------------------------------------------"
+		displayBanner
 
-	read -rp "  Search for Breached Website Content (min. 3 Chars): " searchCriteria
+		#Navigation. Search Detail.
+		echo -e  "\n${GREEN}  View PWNED Website Data. Enter Search Criteria.${NORMAL}"
+		echo     "  -------------------------------------------------"
 
-	if [ ${#searchCriteria} -lt 3 ]; then
-		#Does Not Meet Minimum Search Criteria.
-		echo -e "\n\n  ${RED}  Please Enter 3 or More Characters in the Search Field.${NORMAL}\n"
-	else
-		# Search For Results.
-		searchResult=$(grep $searchCriteria $dataCleansed | grep $searchCriteria)
+		read -rp "  Search for Breached Website Content (min. 3 Chars): " searchCriteria
 
-		if [ "$searchResult" = "" ]; then
-			#No Results Found.
-			echo -e "\n${RED}  No Results Were Found. Try Again ...${NORMAL}\n"
+		if [ ${#searchCriteria} -lt 3 ]; then
+			#Does Not Meet Minimum Search Criteria.
+			echo -e "\n\n${RED}  Please Enter 3 or More Characters in the Search Field.${NORMAL}\n"
+			promptPressEnter
 		else
-			#Display Results.
-			echo -e "$searchResult" | awk -f "displayDetail.awk" | more
+			# Search For Results.
+			searchResult=$(grep $searchCriteria $dataCleansed)
+
+			if [ "$searchResult" = "" ]; then
+				#No Results Found.
+				echo -e "\n${RED}  No Results Were Found.${NORMAL}\n"
+
+				read -rp "  Press Enter to Continue, or Type 'exit' to Quit: " option
+
+				isExit=$(echo "$option" | tr '[:upper:]' '[:lower:]')
+				if [ "$isExit" == "exit" ]; then break; fi
+
+			else
+				#Display Results.
+				echo -e "$searchResult" | awk -f "displayDetail.awk" | more
+				break
+			fi
 		fi
-	fi
+
+	done
 
 }
 
@@ -64,7 +77,7 @@ displayDataList() {
 
 	esac
 
-	#read -rp "Press Enter to Continue ..."
+	promptPressEnter
 
 }
 
@@ -130,7 +143,6 @@ do
 			displayDataDetail ;;
 
 		[9] )
-			clear
 			break ;;
 
 		* )
@@ -139,6 +151,6 @@ do
 
 	esac
 
-	promptPressEnter
+	if [ "$isExit" != "exit" ]; then promptPressEnter; fi
 
 done
