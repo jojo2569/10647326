@@ -7,35 +7,34 @@
 # Author       : Joe Velardi
 
 #Imports.
-#import matplotlib as mpl
-#import matplotlib.pyplot as plt
-import numpy as np
+import csv
+
+
 import pandas as pd
 
+#Variables - Make SeparateVariable file.
+dataCategory = "../data/categoryData.txt"
 
 
-filename = "../data/categoryData.txt"
-
-#dataX=np.loadtxt( filename, delimiter='|', usecols=[0])
-#dataY=np.loadtxt( filename, delimiter='|', usecols=[1], dtype=str)
-#print(data)
-
-
-data = pd.read_csv(filename, delimiter='|')
-data.info()
-
-
-
-#with open(filename, "r") as f:
-#    print(f.read())
-
- 
+#Open File.
+with open(dataCategory, "r") as f:
+    reader = csv.reader(f, delimiter="|")
+    for row in reader:
+        #print(row)
+        print(row[1])
 
 
 
+
+#fn = pd.read_csv(dataCategory, delimiter="|")
+#print(fn.sort_values(by=[0], axis=[0], ascending=False))
 
 
 
 
 # sudo apt-get install python3-matplotlib  -- ubuntu
 # sudo apt-get install python3-matplotlib   -- ubuntu
+
+
+
+

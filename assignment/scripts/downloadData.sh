@@ -25,7 +25,7 @@ wget -q --spider "$url"
 if [ "$?" -eq 0 ]
 then
 
-    clear
+    displayBanner 
      
     #Gets File and Makes a Local Copy.
     echo -e "\n${GREEN}Downloading Data. One Moment ...${NORMAL}"

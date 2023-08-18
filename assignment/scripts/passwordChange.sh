@@ -24,7 +24,7 @@ hasSpecial="*[#?!@$\%^\&*-]*"
 while true
 do
 
-    clear
+    displayBanner
 
     # Get Password Routine.
     echo -e "\n${GREEN}Password Change. Criteria:${NORMAL}"
@@ -48,7 +48,7 @@ do
 
     else
         #Password Does Not Meet Password Complexity Criteria.
-        clear
+        displayBanner
         echo -e "\n${GREEN}Password Change. ${LRED}Complexity FAILED:\n${RED}"
         
         if [ ${#password} -lt $hasMin     ];  then echo -e " - Password Does Not Meet the Minimum Length of 8 Characters."     ; fi

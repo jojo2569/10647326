@@ -16,7 +16,7 @@ source "../core/functions.sh"
 #Enter Search Criteria to Display Detail.
 displayDataDetail() {
 
-	clear
+	displayBanner
 
 	#Navigation. Search Detail.
 	echo -e  "\n${GREEN}  View PWNED Website Data. Enter Search Criteria.${NORMAL}"
@@ -46,7 +46,7 @@ displayDataDetail() {
 #Display List in Tabular Format.
 displayDataList() {
 
-	clear
+	displayBanner
 
 	case $1 in
 		[1] )
@@ -84,7 +84,7 @@ menuItem8="Search PWNED Website Detail"
 while [ $? -eq 0 ]
 do
 
-	clear
+	displayBanner
 
 	#Navigation. Enter Menu Option.
 	echo -e  "\n${GREEN}  View PWNED Website Data. Enter an Option.${BLUE}"

@@ -13,15 +13,29 @@ source "../core/variables.sh"
 source "../core/functions.sh"
 
 
-#Enter Valid Password to Commence.
-./passwordChecker.sh
+#Display Banner.
+displayBanner
+
+
+#Check if First Time User.
+if [ -f "$secretPassword" ]
+then
+	#Enter Valid Password to Commence.
+	./passwordChecker.sh
+else
+	#Generate Password.
+	./passwordChange.sh
+
+
+
+fi
 
 
 #Loop Through Menu.
 while [ $? -eq 0 ]
 do
 
-	clear
+	displayBanner
 
 	#Navigation. Enter Menu Option.
 	echo -e  "\n${GREEN}  MAIN Menu. Enter an Option.${BLUE}"

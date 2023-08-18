@@ -16,7 +16,7 @@ source "../core/functions.sh"
 while [ $? -eq 0 ]
 do
 
-	clear
+	displayBanner
 
 	#Navigation. Enter Menu Option.
 	echo -e  "\n${GREEN}  ADMIN Tasks. Enter an Option.${BLUE}"
@@ -51,7 +51,5 @@ do
 			promptInvalidEntry
 
 	esac
-
-
 
 done

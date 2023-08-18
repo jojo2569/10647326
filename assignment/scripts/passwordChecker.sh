@@ -16,11 +16,6 @@ source "../core/variables.sh"
 while true
 do
 
-    clear
-
-    #Display Welcome Banner.
-    cat $welcomeBanner
-
     # Get Password (Secretly).
     read -rsp "PWNED WebSite Analysis. Please Enter Your Password: " password
 
