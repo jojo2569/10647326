@@ -41,9 +41,5 @@ UNDERLINED="\033[4m"
 BLINKING="\033[5m"
 REVERSE="\033[6m"
 
-#Arrows
-UP=$(echo $'\U2191')
-DN=$(echo $'\U2193')
-
 #Field Delimiter
 DELIM="|"
