@@ -20,11 +20,11 @@ do
 
 	#Navigation. Enter Menu Option.
 	echo -e  "\n${GREEN}  ADMIN Tasks. Enter an Option.${BLUE}"
-	echo     "  -----------------------------------------"
+	echo     "  -------------------------------------------------"
 	echo     "  1. Download & Cleanse Data"
 	echo     "  2. Change Password"
 	echo     "  3. Reset Default Password"
-	echo     "  -----------------------------------------"
+	echo     "  -------------------------------------------------"
 	echo -e  "  9. Back${NORMAL}\n"
 
 	read -rp "  Option [1-3, or 9]: " option

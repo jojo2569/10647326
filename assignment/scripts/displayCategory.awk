@@ -17,10 +17,12 @@ BEGIN {
     print("______________________________________________________");
 }
 {
-    printf("| %s%-40s%s | %s%'8d%s |\n", YELLOW, $2, NORMAL, MAGENTA, $1, NORMAL, SUM+=$1);
+    SUM += $1;
+    printf("| %s%-40s%s | %s%'8d%s |\n", YELLOW, $2, NORMAL, MAGENTA, $1, NORMAL);
 }
 END {
     printf("_______________________________________________________\n");
     printf("| %s%-40s%s | %s%'8d%s |\n", BYELLOW, "Total Records: " NR, NORMAL, BMAGENTA, SUM, NORMAL);
+    printf("| %s%-40s%s | %s%'8d%s |\n", BYELLOW, "Average Categories Breached:", NORMAL, BMAGENTA, SUM/NR, NORMAL);
     printf("_______________________________________________________\n\n");
 }

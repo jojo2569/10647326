@@ -70,14 +70,14 @@ displayDataList() {
 
 
 #Local Variables.
-menuItem1="Full List: PWNED Website Data"
-menuItem2="Top 20: Most Recent PWNED Websites"
+menuItem1="Full List: Breached Website Data"
+menuItem2="Top 20: Most Recent Breached Websites"
 menuItem3="Top 20: Most Compromised Breaches"
 menuItem4="Top 20: Least Compromised Breaches"
 menuItem5="Full List: Breaches by Category"
 menuItem6="Top 20: Most Compromised Categories"
 menuItem7="Top 20: Least Compromised Categories"
-menuItem8="Search PWNED Website Detail"
+menuItem8="Search Breached Website Detail"
 
 
 #Loop Through Menu.
@@ -87,19 +87,19 @@ do
 	displayBanner
 
 	#Navigation. Enter Menu Option.
-	echo -e  "\n${GREEN}  View PWNED Website Data. Enter an Option.${BLUE}"
-	echo     "  -----------------------------------------"
+	echo -e  "\n${GREEN}  View Breached Website Data. Enter an Option.${BLUE}"
+	echo     "  -------------------------------------------------"
 	echo     "  1. $menuItem1"
 	echo     "  2. $menuItem2"
 	echo     "  3. $menuItem3"
     echo     "  4. $menuItem4"
-	echo     "  -----------------------------------------"
+	echo     "  -------------------------------------------------"
     echo     "  5. $menuItem5"
 	echo     "  6. $menuItem6"
 	echo     "  7. $menuItem7"
-	echo     "  -----------------------------------------"
+	echo     "  -------------------------------------------------"
 	echo     "  8. $menuItem8"
-	echo     "  -----------------------------------------"
+	echo     "  -------------------------------------------------"
 	echo -e  "  9. Back${NORMAL}\n"
 
 	read -rp "  Option [1-9]: " option
