@@ -10,6 +10,7 @@
 #Data Sources.
 source "../core/constants.sh"
 source "../core/variables.sh"
+source "../core/functions.sh"
 
 #Local Variables.
 hasMin=8
@@ -57,7 +58,7 @@ do
         if [[ $password   !=  $hasSpecial ]]; then echo -e " - Password Does Not Have at Least 1 Special [!@#$%^&] Character." ; fi
 
         echo -e "${NORMAL}"
-        read -p "Press Any Key to Try Again ..."
+        promptPressEnter
 
     fi
 

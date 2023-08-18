@@ -10,6 +10,7 @@
 #Data Sources.
 source "../core/constants.sh"
 source "../core/variables.sh"
+source "../core/functions.sh"
 
 #Loop Through Menu.
 while [ $? -eq 0 ]
@@ -47,8 +48,7 @@ do
 
 		* )
 			#Invalid Entry.
-			echo -e "\n${RED}  Invalid Entry. ${NORMAL}\n\n"
-			sleep 1
+			promptInvalidEntry
 
 	esac
 

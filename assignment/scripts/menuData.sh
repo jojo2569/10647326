@@ -10,6 +10,7 @@
 #Data Sources.
 source "../core/constants.sh"
 source "../core/variables.sh"
+source "../core/functions.sh"
 
 
 #Enter Search Criteria to Display Detail.
@@ -134,11 +135,10 @@ do
 
 		* )
 			#Invalid Entry.
-			echo -e "\n${RED}  Invalid Entry. Try Again ...${NORMAL}"
-			sleep 1
+			promptInvalidEntry
 
 	esac
 
-	read -rp "  Press Enter to Continue ..."
+	promptPressEnter
 
 done

@@ -38,7 +38,7 @@
 2|Drug habits
 1|Eating habits
 10|Education levels
-685|Email addresses
+686|Email addresses
 8|Email messages
 25|Employers
 1|Employment statuses
@@ -73,7 +73,7 @@
 15|Marital statuses
 1|Mnemonic phrases
 1|Mothers maiden names
-328|Names
+329|Names
 7|Nationalities
 2|Net worths
 3|Nicknames
@@ -91,9 +91,9 @@
 3|Personal descriptions
 5|Personal health data
 2|Personal interests
-208|Phone numbers
+209|Phone numbers
 1|Photos
-164|Physical addresses
+165|Physical addresses
 8|Physical attributes
 2|PINs
 1|Places of birth

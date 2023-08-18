@@ -10,6 +10,7 @@
 #Data Sources.
 source "../core/constants.sh"
 source "../core/variables.sh"
+source "../core/functions.sh"
 
 
 #House Cleaning.
@@ -44,7 +45,7 @@ then
     entries=$(wc -l $dataCategory | grep -o "^\w*\b")
     echo -e "\nData Category Completed ($entries Entries) ..." && ls -al "$dataCategory" --color=auto && echo -e "\n"
 
-    read -rp "Press Enter to Continue ..."
+    promptPressEnter
 
 else
     echo -e "\n${RED}  Invalid URL ...${NORMAL}\n"

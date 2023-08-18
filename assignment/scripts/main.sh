@@ -10,6 +10,7 @@
 #Data Sources.
 source "../core/constants.sh"
 source "../core/variables.sh"
+source "../core/functions.sh"
 
 
 #Enter Valid Password to Commence.
@@ -34,24 +35,23 @@ do
 	read -rp "  Option [1-3, or 9]: " option
 
 	case $option in
-		[1]* )
+		[1] )
 			./menuData.sh ;;
 
-		[2]* )
+		[2] )
 			echo "2" ;;
 
-		[3]* )
+		[3] )
 			./menuAdmin.sh ;;
 
-		[9]* )
+		[9] )
 			#Exit.
 			clear
 			break ;;
 
 		* )
 			#Invalid Entry.
-			echo -e "\n${RED}  Invalid Entry. Try Again ...${NORMAL}"
-			sleep 1
+			promptInvalidEntry
 
 	esac
 
