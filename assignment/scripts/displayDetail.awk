@@ -2,9 +2,7 @@
 
 BEGIN {
     FS="|";
-    BOLD="\033[1m";  
     BBLUE="\033[1;34m";
-    YELLOW="\033[033m";
     BYELLOW="\033[1;033m";
     NORMAL="\033[0m";
 

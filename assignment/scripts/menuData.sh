@@ -20,16 +20,16 @@ displayDataDetail() {
 
 	#Navigation. Search Detail.
 	echo -e  "\n${GREEN}  View PWNED Website Data. Enter Search Criteria.${NORMAL}"
-	echo     "  -----------------------------------------"
+	echo     "  -------------------------------------------------"
 
-	read -rp "  Enter PWNED Website name (min. 3 Chars): " searchCriteria
+	read -rp "  Search for Breached Website Content (min. 3 Chars): " searchCriteria
 
 	if [ ${#searchCriteria} -lt 3 ]; then
 		#Does Not Meet Minimum Search Criteria.
-		echo -e "\n\n  ${RED}Please Enter 3 or More Characters in the Search Field.${NORMAL}\n"
+		echo -e "\n\n  ${RED}  Please Enter 3 or More Characters in the Search Field.${NORMAL}\n"
 	else
 		# Search For Results.
-		searchResult=$(grep "^${searchCriteria}[^|]*" $dataCleansed | grep $searchCriteria)
+		searchResult=$(grep $searchCriteria $dataCleansed | grep $searchCriteria)
 
 		if [ "$searchResult" = "" ]; then
 			#No Results Found.
