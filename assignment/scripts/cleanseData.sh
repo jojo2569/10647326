@@ -27,9 +27,9 @@ sed 's/Breach date: //g' |                                              #sed [6]
 sed 's/Compromised accounts: //g' |                                     #sed [7] Remove 'Compromised accounts: ' prefix.
 sed 's/Compromised data: //g' |                                         #sed [8] Remove 'Compromised data: ' prefix.
 sed '/^[[:space:]]*$/d' |                                               #sed [9] Remove Blank Lines & Redirect to $dataScratch.
-sed 's/\&amp;/\&/g; s/&quot/";/g; s/&#39;/'"'"'/g; s/&#228;/a/g' |      #sed [10] Cleanse HTML Escape Characters.
+sed 's/\&amp;/\&/g; s/&quot/"/g; s/&#39;/'"'"'/g; s/&#228;/a/g' |       #sed [10] Cleanse HTML Escape Characters.
 sed 's/&#252;/u/g; s/&mdash;/-/g; s/&#224;/a/g; s/&#201;/E/g' |
-sed 's/&#233;/e/g; s/&#241;/n/g' > $dataScratch							#Pump out Reults to a Temporary File.
+sed 's/&#233;/e/g; s/&#241;/n/g; s/";/"/g' > $dataScratch				#Pump out Reults to a Temporary File.
 
 
 #Format Fields; Add Delimiters.

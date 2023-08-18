@@ -16,7 +16,7 @@ BEGIN {
     printf("  %s%-22s: %s%s\n", BYELLOW, "Breach Date", NORMAL, $3);
     printf("  %s%-22s: %s%'d\n", BYELLOW, "Compromised Accounts", NORMAL, $4);
     printf("  %s%-22s: %s%s\n", BYELLOW, "Compromised Data", NORMAL, $5);
-    printf("\n  %s%s\n\n", NORMAL, $2 );
+    printf("\n  %s%s\n", NORMAL, $2 );
 
     printf("\n  --------------------------------------------------\n\n");
 }
