@@ -28,22 +28,24 @@ then
     displayBanner 
      
     #Gets File and Makes a Local Copy.
-    echo -e "\n${GREEN}Downloading Data. One Moment ...${NORMAL}"
+    echo -e "\n${GREEN}  Downloading Data. One Moment ...${NORMAL}"
     wget -qP "$dataLocation" "$url"
 
-    #Get Filename from URL and Displays Content
-    doc=$(echo -e "$url" | awk -F"/" '{print $NF}')
-    echo -e "\nFile Downloaded Successfully ..." && ls -al "$dataSource" --color=auto
+    #Displays Content Being Processes.
+    results=$(ls -al "$dataSource")
+    echo -e "\n  File Downloaded Successfully ...\n  $results"
 
     #Run Data Cleansing.
-    echo -e "\n${GREEN}Cleansing Data. Two Moments ...${NORMAL}"
+    echo -e "\n${GREEN}  Cleansing Data. Almost There ...${NORMAL}"
     $(./cleanseData.sh)
     
     entries=$(wc -l $dataCleansed | grep -o "^\w*\b")
-    echo -e "\nData Cleansing Completed ($entries Entries) ..." && ls -al "$dataCleansed" --color=auto
+    results=$(ls -al "$dataCleansed")
+    echo -e "\n  Data Cleansing Completed ($entries Entries) ...\n  $results"
 
     entries=$(wc -l $dataCategory | grep -o "^\w*\b")
-    echo -e "\nData Category Completed ($entries Entries) ..." && ls -al "$dataCategory" --color=auto && echo -e "\n"
+    results=$(ls -al "$dataCategory")
+    echo -e "\n  Data Category Completed ($entries Entries) ...\n  $results\n"
 
     promptPressEnter
 

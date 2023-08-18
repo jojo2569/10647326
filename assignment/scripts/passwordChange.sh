@@ -29,13 +29,16 @@ do
     #If You're New Here or Have Opted to Reset the Environment.
     if [ ! -f "$secretPassword" ]
     then
-        echo -e "You're New Here. You'll Need to Create a Password.\n" 
+        echo -e "${BGREEN}Looks Like You're New Here. You'll Need to Create a Password.${NORMAL}" 
     fi
 
     # Get Password Routine.
-    echo -e "\n${GREEN}Password Change. Criteria:${NORMAL}"
+    echo -e "\n${GREEN}Password Change. Criteria:${NORMAL}\n"
     echo -e " - Minimum 8 Characters in Length."
-    echo -e " - At Least 1x Upper, 1x Lower, 1x Numeric, 1x Special Character.${NORMAL}\n"
+    echo -e " - At Least 1x Upper Case [A-Z] Character."
+    echo -e " - At Least 1x Lower Case [a-z] Character."
+    echo -e " - At Least 1x Numeric [0-9] Character."
+    echo -e " - At Least 1x Special [!@#$%^&] Character.${NORMAL}\n"
     read -rsp "Please Enter a Password or Type 'exit' to Quit: " password
 
     #Exit Gracefully.        

@@ -11,5 +11,5 @@ promptInvalidEntry() {
 }
 
 promptPressEnter() {
-    read -rp "Press Enter to Continue ..."
+    read -rp "  Press Enter to Continue ..."
 }

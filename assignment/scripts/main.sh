@@ -23,8 +23,8 @@ mainMenu() {
 		#Navigation. Enter Menu Option.
 		echo -e  "\n${GREEN}  MAIN Menu. Enter an Option.${BLUE}"
 		echo     "  -----------------------------------------"
-		echo     "  1. View PWNED Data"
-		echo     "  2. View PWNED Graphs"
+		echo     "  1. View Breached Website Data"
+		echo     "  2. View PBreached Website Graphs"
 		echo     "  3. Admin Tasks"
 		echo     "  -----------------------------------------"
 		echo -e  "  9. Exit${NORMAL}\n"
@@ -70,6 +70,12 @@ then
 else
 	#Generate Password.
 	./passwordChange.sh
-	if [ "$isExit" != "exit" ];	then mainMenu; fi	
+	
+	if [ "$isExit" == "exit" ]
+	then 
+		exit 0 
+	else 
+		mainMenu
+	fi	
 
 fi
