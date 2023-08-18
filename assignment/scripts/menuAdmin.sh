@@ -23,7 +23,7 @@ do
 	echo     "  -----------------------------------------"
 	echo     "  1. Download & Cleanse Data"
 	echo     "  2. Change Password"
-	echo     "  3. Reset to Default Password"
+	echo     "  3. Reset Environment"
 	echo     "  -----------------------------------------"
 	echo -e  "  9. Back${NORMAL}\n"
 
@@ -37,8 +37,8 @@ do
 			./passwordChange.sh ;;
 
 		[3] )
-			echo -n "$defaultPassword" > $secretPassword
-			echo -e "\n  Default Password Has Been Reset ..." 
+			rm -f $secretPassword
+			echo -e "\n  Environment Has Been Reset ..." 
 			sleep 2 ;;
 
 		[9] )

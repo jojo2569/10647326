@@ -26,11 +26,17 @@ do
 
     displayBanner
 
+    #If You're New Here or Have Opted to Reset the Environment.
+    if [ ! -f "$secretPassword" ]
+    then
+        echo -e "You're New Here. You'll Need to Create a Password.\n" 
+    fi
+
     # Get Password Routine.
     echo -e "\n${GREEN}Password Change. Criteria:${NORMAL}"
     echo -e " - Minimum 8 Characters in Length."
     echo -e " - At Least 1x Upper, 1x Lower, 1x Numeric, 1x Special Character.${NORMAL}\n"
-    read -rsp "Please Enter Your Password or Type 'exit' to Quit: " password
+    read -rsp "Please Enter a Password or Type 'exit' to Quit: " password
 
     #Exit Gracefully.        
     isExit=$(echo "$password" | tr '[:upper:]' '[:lower:]')
