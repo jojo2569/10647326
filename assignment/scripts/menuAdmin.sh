@@ -11,6 +11,7 @@
 source "../core/constants.sh"
 source "../core/variables.sh"
 source "../core/functions.sh"
+source "./passwordComplexity.sh"
 
 changePassword() {
 
@@ -22,6 +23,7 @@ changePassword() {
         checkPasswordComplexity
 
         if [ "$isExit" == "exit" ]; then break; fi
+        if [ "$isValid" == true  ]; then break; fi
 
     done
 
