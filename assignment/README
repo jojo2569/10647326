@@ -2,12 +2,14 @@ ECU: CYB6004.1 Cyber Security: Scripting Languages
 
 Preface
 This script is designed to pull data from a site containing a list of PWNED Websites, 
-showcasing when it occurred, the number of users impacted, and the category of 
+showcasing the date of the breach, the number of users impacted, and the category of 
 services it also impacted. Navigation will be through a menu system.
 
 How To Use This Application
-The application is password protected, and for your convenience the default password is 
-foo-bar. You will need to successfully enter the correct password to proceed. Once you 
-have passed this step, you will encounter a menu to navigate your way through the application.
-
-There is a section proividing tabled data
+The application is password protected, and upon first login you will be asked to create a 
+password. The password will require a level of complexity in order to enter the stsrem. 
+Once you have entered the system there will be a main menu, whereby you can view the 
+information in a tabular format, displaying breached website information. There also a
+capability of searching the data detail and display the content of the breaches. Lastly,
+there is an Administrative sectin that will allow you to refresh the downloaded data, reset
+your password, or reset the environment.
