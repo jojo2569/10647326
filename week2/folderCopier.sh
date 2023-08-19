@@ -26,4 +26,6 @@ else
 	echo "I couldn't find that folder"
 
 fi
+
+sleep 1
 					

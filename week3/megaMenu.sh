@@ -22,7 +22,6 @@ clear
 while [ $? -eq 0 ]
 do
 
-	sleep 2
 	clear
 
 	#Hashed Password matches; Enter Menu Option.
@@ -41,43 +40,45 @@ do
 	clear
 
 	case $option in
-		[1]* )
+		[1] )
 			#Create a Folder.
 			../week2/folderMaker.sh ;;
 
-		[2]* )
+		[2] )
 			#Copy a Folder.
 			../week2/folderCopier.sh ;;
 
-		[3]* )
+		[3] )
 			#Set a Password.
 			../week2/setPassword.sh ;;
 
-		[4]* )
+		[4] )
 			#Calculator.
 			./calculator.sh ;;
 
-		[5]* )
+		[5] )
 			#Create Week Folders.
 			read -rp "Please Enter Two Numbers : " num1 num2
 			./megaFolderMaker.sh "$num1" "$num2" ;;
 
-		[6]* )
+		[6] )
 			#Check Filenames.
 			./filenames.sh ;;
 
-		[7]* )
+		[7] )
 			#Download a File.
 			./internetDownloader.sh ;;
 
-		[8]* )
+		[8] )
 			#Exit.
 			exit 0 ;;
 
 		* )
 			#Invalid Entry.
 			echo -e "\n${RED}Invalid Entry. Exiting ...${NORMAL}"
+			clear
 			sleep 1
+			exit 1
 
 	esac
 

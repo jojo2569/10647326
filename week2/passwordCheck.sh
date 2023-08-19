@@ -16,19 +16,22 @@ NORMAL="\033[0m"
 read -rsp "Please Enter Your Password: " password
 
 # Check Hashed Password from File (Absolute Path).
-echo -n "$password" | sha256sum --check --status ~/scripts/portfolio/week2/secret.txt
+echo -n "$password" | sha256sum --check --status "../week2/secret.txt"
 
 #Validate if Password is Correct, or Not.
 if [ $? -eq 0 ] ; then
 
 	# Password Matches.
 	echo -e "\n\n${GREEN}Access Granted.${NORMAL}"
+	sleep 1
+	clear
+	exit 0
 
 else
 
 	#Password Does Not match.
-	echo -e "\n\n${RED}Access Denied. Exiting ...${NORMAL}\n"
-	sleep 2
+	echo -e "\n\n${RED}Access Denied. Exiting.${NORMAL}\n"
+	sleep 1
 	clear
 	exit 1
 

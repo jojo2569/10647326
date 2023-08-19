@@ -7,9 +7,6 @@
 # Author       : Joe Velardi
 
 
-# Source Files
-source userAccounts.awk
-
 #Constants
 RED="\033[31m"
 GREEN="\033[32m"
@@ -35,7 +32,7 @@ do
 	case $selection in
 		[1]* )
 			#All Accounts.
-			grep ':' /etc/passwd | awk -f userAccounts.awk ;;
+			grep ':' /etc/passwd | awk -f userAccounts.awk | more ;;
 
 		[2]* )
 			#Accounts Using bash Shell.
