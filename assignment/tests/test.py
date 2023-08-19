@@ -44,7 +44,7 @@ dCleansed= dCleansed.sort_values(dCleansed.columns[2], ascending=[False]) #.head
 #dGroupBy=dCleansed.groupby(dCleansed.date.dt.year)['Accounts'].sum()
 
 dCleansed['Date'] = dCleansed['Date'].str[:4]
-dGroupBy=dCleansed.groupby('Date')['Accounts'].sum()
+dGroupBy=dCleansed.groupby('Date')['Accounts'].sum().reset_index(name ='Totals')
 print(dGroupBy)
 
 
@@ -54,6 +54,7 @@ print(dGroupBy)
 
 #print(dCleansed)
 #print(dCleansed[['Name', 'Date', 'Accounts']].dtypes)
+
 #print(dCleansed[['Date', 'Accounts']])
 
 
@@ -66,7 +67,6 @@ print(dGroupBy)
 
 
 # sudo apt-get install python3-matplotlib  -- ubuntu
-# sudo apt-get install python3-matplotlib   -- ubuntu
 
 
 
