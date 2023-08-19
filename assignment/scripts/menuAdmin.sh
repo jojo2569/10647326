@@ -12,6 +12,24 @@ source "../core/constants.sh"
 source "../core/variables.sh"
 source "../core/functions.sh"
 
+changePassword() {
+
+    while true
+    do
+
+        displayBanner
+
+        checkPasswordComplexity
+
+        if [ "$isExit" == "exit" ]; then break; fi
+
+    done
+
+}
+
+
+
+
 #Loop Through Menu.
 while [ $? -eq 0 ]
 do
@@ -23,7 +41,7 @@ do
 	echo     "  -------------------------------------------------"
 	echo     "  1. Download & Cleanse Data"
 	echo     "  2. Change Password"
-	echo     "  3. Reset Default Password"
+	echo     "  3. Reset Environment"
 	echo     "  -------------------------------------------------"
 	echo -e  "  9. Back${NORMAL}\n"
 
@@ -34,11 +52,12 @@ do
 			./downloadData.sh ;;
 
 		[2] )
-			./passwordChange.sh ;;
+			
+			changePassword ;;
 
 		[3] )
-			echo -e $hashedPassword > $secretPassword
-			echo -e "\n  Password Has Been Reset ..." 
+			rm -f $secretPassword
+			echo -e "\n  Environment Has Been Reset ..." 
 			sleep 2 ;;
 
 		[9] )

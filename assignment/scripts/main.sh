@@ -90,7 +90,5 @@ do
 	esac
 
 
-	#if [ "$isExit" != "exit" ]; then promptPressEnter; fi
-
 done
 
