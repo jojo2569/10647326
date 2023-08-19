@@ -20,12 +20,12 @@ BEGIN {
 {
     SUM += $4;
     AVG += $4;
-    printf("| %s%-50s%s | %s%-15s%s | %s%'18d%s |\n", YELLOW, $1, NORMAL, MAGENTA, $3, NORMAL, MAGENTA, $4, NORMAL );
+    printf("| %s%-50s%s | %s%-15s%s | %s%'18.0f%s |\n", YELLOW, $1, NORMAL, MAGENTA, $3, NORMAL, MAGENTA, $4, NORMAL );
 }
 
 END {
     printf("_____________________________________________________________________________________________\n");
-    printf("| %s%-68s%s | %s%'18d%s |\n", BYELLOW, "Total Records: " NR, NORMAL, BMAGENTA, SUM, NORMAL);
-    printf("| %s%-68s%s | %s%'18d%s |\n", BYELLOW, "Average User Accounts Breached:", NORMAL, BMAGENTA, SUM/NR, NORMAL);
+    printf("| %s%-68s%s | %s%'18.0f%s |\n", BYELLOW, "Total Records: " NR, NORMAL, BMAGENTA, SUM, NORMAL);
+    printf("| %s%-68s%s | %s%'18.0f%s |\n", BYELLOW, "Average User Accounts Breached:", NORMAL, BMAGENTA, SUM/NR, NORMAL);
     printf("_____________________________________________________________________________________________\n\n");
 }

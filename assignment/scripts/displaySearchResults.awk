@@ -1,4 +1,4 @@
-#Prints Individual Record Detail.
+#Prints Search Result Detail.
 
 BEGIN {
     FS="|";
