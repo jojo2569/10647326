@@ -20,11 +20,15 @@ displaySearchResults() {
 
 		read -rp "  Search for Breached Website Content (min. 3 Chars): " searchCriteria
 
-		if [ ${#searchCriteria} -lt 3 ]; then
+		if [ ${#searchCriteria} -lt 3 ] 
+		then
+
 			#Does Not Meet Minimum Search Criteria.
 			echo -e "\n\n${RED}  Please Enter 3 or More Characters in the Search Field.${NORMAL}\n"
 			promptPressEnter
+
 		else
+
 			# Search For Results.
 			searchResult=$(grep $searchCriteria $dataCleansed)
 
@@ -39,7 +43,8 @@ displaySearchResults() {
 
 			else
 				#Display Results.
-				echo -e "$searchResult" | awk -f "displaySearchResults.awk" | more
+				echo -e "$searchResult" | LC_ALL=en_US.UTF-8 gawk -f "displaySearchResults.awk" | more
+				promptPressEnter
 				break
 			fi
 		fi

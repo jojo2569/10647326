@@ -20,7 +20,7 @@ displayDataTabular() {
 		[2] )
 			#Display Top Lists.
 			cat $2 | sort  --field-separator="$DELIM" $5 $6 > $dataScratch
-			head -20 $dataScratch | awk -v header="$3" -f $4 ;;
+			head -20 $dataScratch | LC_ALL=en_US.UTF-8 gawk -v header="$3" -f $4 ;;
 
 		* )
 			#Invalid Entry.
