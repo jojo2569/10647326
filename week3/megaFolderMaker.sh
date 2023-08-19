@@ -13,7 +13,7 @@ if (( $#!=2 )); then
       
     #Print an error and exit 
       
-    echo "Error, provide two numbers" && exit 1 
+    echo "Error, provide two numbers" && sleep 1 && exit 1 
       
 fi 
       
@@ -28,6 +28,8 @@ do
     echo "Creating directory week$i" 
       
     mkdir -p "../week$i" 
+
+    sleep 1
       
 done 
      

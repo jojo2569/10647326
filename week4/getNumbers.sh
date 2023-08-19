@@ -13,18 +13,13 @@ NORMAL="\033[0m"
 
 
 #This function prints a given error       
-printError()     
-{ 
-      
-    echo -e "${RED}ERROR:${NORMAL} $1" 
-      
+printError() { 
+    echo -e "${RED}ERROR:${NORMAL} $1"      
 } 
       
       
 #This function will get a value between the 2nd and 3rd arguments      
-getNumber() 
-      
-{ 
+getNumber() { 
       
     read -p "$1: " 
       

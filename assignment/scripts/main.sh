@@ -12,9 +12,11 @@ source "../core/constants.sh"
 source "../core/variables.sh"
 source "../core/functions.sh"
 
+
 #Specialised Functions.
 source "./displayDataTabular.sh"
 source "./displaySearchResults.sh"
+
 
 #Local Variables.
 menuItem1="Full List: Breached Website Data"
@@ -43,8 +45,8 @@ do
 	echo     "  1. $menuItem1"
 	echo     "  2. $menuItem2"
 	echo     "  3. $menuItem3"
-    echo     "  4. $menuItem4"
-    echo     "  5. $menuItem5"
+	echo     "  4. $menuItem4"
+	echo     "  5. $menuItem5"
 	echo     "  6. $menuItem6"
 	echo     "  7. $menuItem7"
 	echo     "  -------------------------------------------------"

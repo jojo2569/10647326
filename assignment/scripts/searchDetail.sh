@@ -11,11 +11,11 @@
 source "../core/constants.sh"
 source "../core/variables.sh"
 
-	displayBanner
+displayBanner
 
-	#Navigation. Search Detail.
-	echo -e  "\n${GREEN}  View PWNED Data. Enter earch Criteria.${BLUE}\n"
-	echo     "  -----------------------------------------"
+#Navigation. Search Detail.
+echo -e  "\n${GREEN}  View PWNED Data. Enter earch Criteria.${BLUE}\n"
+echo     "  -----------------------------------------"
 
 
-	read -rp "  Enter  PWNED Website name: " option
+read -rp "  Enter  PWNED Website name: " option

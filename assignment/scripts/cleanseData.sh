@@ -38,7 +38,7 @@ formatFields() {
 	case $(($1 % 5)) in
 
 		[0] )
-            #Last Field. No Delimieter Required.
+			#Last Field. No Delimieter Required.
 			echo -e "$2" >> $dataCleansed 
 
 			#Loop Through Category Field and Separate.
@@ -48,11 +48,11 @@ formatFields() {
 			done ;;
 
 		[3] )
-            #Format Date Field.
+			#Format Date Field.
 			echo -n $(echo -n $(date -d "$2" +'%F') && echo "$DELIM") >> $dataCleansed ;;
 
 		[4] )
-            #Format Number Field.
+			#Format Number Field.
 			echo -n $(echo -n $2 | sed 's/,//g' && echo -n "$DELIM") >> $dataCleansed ;;
 
 		* )

@@ -43,16 +43,13 @@ do
 	read -rp "Do you want to create another folder [yn] ? " yn
 
 	case $yn in
-		[Yy]* )
+		[Yy] )
 			clear
-			createFolder
-			;;
-		[Nn]* )
-			break
-			;;
+			createFolder ;;
+		[Nn] )
+			break ;;
 		* )
-			echo -e "\nPlease answer yes[y] or no[n]."
-			;;
+			echo -e "\nPlease answer yes[y] or no[n]." ;;
 	esac
 done
 

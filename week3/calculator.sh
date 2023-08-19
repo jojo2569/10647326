@@ -36,43 +36,42 @@ while [ "$?" -eq 0 ] ; do
 
 	#Perform Calculation
 	case $option in
-		[1]* )
+		[1] )
 			sum=$(echo "$val1 + $val2" | bc)
-			echo -e "\n${BLUE}Answer: $val1 + $val2 = $sum\n" 
-			;;
-		[2]* )
+			echo -e "\n${BLUE}Answer: $val1 + $val2 = $sum\n" ;;
+
+		[2] )
 			sum=$(echo "$val1 - $val2" | bc)
-			echo -e "\n${GREEN}Answer: $val1 - $val2 = $sum\n" 
-			;;
-		[3]* )
+			echo -e "\n${GREEN}Answer: $val1 - $val2 = $sum\n" ;;
+
+		[3] )
 			sum=$(echo "$val1 * $val2" | bc)
-			echo -e "\n${RED}Answer: $val1 x $val2 = $sum\n" 
-			;;
-		[4]* ) 
+			echo -e "\n${RED}Answer: $val1 x $val2 = $sum\n" ;;
+
+		[4] ) 
 			sum=$(echo "$val1 / $val2" | bc)
-			echo -e "\n${MAGENTA}Answer: $val1 / $val2 = $sum\n" 
-			;;
-		[5]* )
+			echo -e "\n${MAGENTA}Answer: $val1 / $val2 = $sum\n" ;;
+
+		[5] )
 			echo -e "\nExiting ...\n"
-			break
-			;;
+			sleep 1
+			break ;;
+			
 		* )
 			echo -e "\nIncorrect Value. Exiting.\n"
-			break
-			;;
+			sleep 1
+			break ;;
 	esac    
 
 	echo -e "$NORMAL"
 	read -rp "Perform Another Calculation? [yn] " yn
 
 	case $yn in
-		[Yy]* )
-			clear
-			;;
+		[Yy] )
+			clear ;;
 		* )
 			echo -e "\nExiting ...\n"
-			break
-			;;
+			break ;;
 	esac
 
 done
