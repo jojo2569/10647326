@@ -14,6 +14,8 @@ source "../core/functions.sh"
 
 
 #Specialised Functions.
+source "./passwordChecker.sh"
+source "./downloadData.sh"
 source "./displayDataTabular.sh"
 source "./displaySearchResults.sh"
 
@@ -29,8 +31,20 @@ menuItem7="Search Breached Website Detail"
 menuItem8="Administrative Tasks"
 
 
-#Enter Valid Password to Commence.
-./passwordChecker.sh
+#Password Protected.
+validatePassword
+
+
+#Check Data Exits.
+if [ ! -f $dataSource ]; then
+
+	displayBanner
+
+	echo -e "${GREEN}  You're New Here. Preparing to Download Your Data ...${NORMAL}" && sleep 2
+	
+	downloadData
+
+fi
 
 
 #Loop Through Menu.
@@ -86,7 +100,6 @@ do
 			exit 1 ;;
 
 		* )
-			#Invalid Entry.
 			promptInvalidEntry
 
 	esac

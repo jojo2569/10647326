@@ -14,7 +14,7 @@ source "../core/functions.sh"
 source "./passwordComplexity.sh"
 
 
-existingUser() {
+validatePassword() {
 
     #Loop Until Correct password or Exit
     while true
@@ -52,32 +52,3 @@ existingUser() {
 }
 
 
-newUser() {
-
-    while true
-    do
-
-        displayBanner
-
-        echo -e "${GREEN}  You're New Here. Lets Create a Password & Download Data.${NORMAL}\n"
-
-        checkPasswordComplexity
-
-        if [ "$isExit" == "exit" ]; then exit 1; fi
-        if [ "$isValid" == true  ]; then ./downloadData.sh; break; fi
-
-    done
-
-}
-
-
-#Check User/Password.
-if [ ! -f $secretPassword ]
-then
-    #New User. Create Password & Download/Cleanse Data.
-    newUser
-else
-    #Existing User. Validates Password.
-    existingUser
-    
-fi

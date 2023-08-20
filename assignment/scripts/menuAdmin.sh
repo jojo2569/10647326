@@ -11,7 +11,12 @@
 source "../core/constants.sh"
 source "../core/variables.sh"
 source "../core/functions.sh"
+
+
+#Specialised Functions.
 source "./passwordComplexity.sh"
+source "./downloadData.sh"
+
 
 changePassword() {
 
@@ -50,16 +55,15 @@ do
 
 	case $option in
 		[1] )
-			./downloadData.sh ;;
+			downloadData ;;
 
 		[2] )
 			
 			changePassword ;;
 
 		[3] )
-			rm -f $secretPassword
-			echo -e "\n  Environment Has Been Reset ..." 
-			sleep 2 ;;
+			echo -e $defaultPassword > $secretPassword
+			echo -e "\n  Environment Has Been Reset ..." && sleep 2 ;;
 
 		[9] )
 			#Exit.
@@ -67,7 +71,6 @@ do
 			break ;;
 
 		* )
-			#Invalid Entry.
 			promptInvalidEntry
 
 	esac
