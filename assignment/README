@@ -6,10 +6,10 @@ showcasing the date of the breach, the number of users impacted, and the categor
 services it also impacted. Navigation will be through a menu system.
 
 How To Use This Application
-The application is password protected, and upon first login you will be asked to create a 
-password. The password will require a level of complexity in order to enter the stsrem. 
-Once you have entered the system there will be a main menu, whereby you can view the 
-information in a tabular format, displaying breached website information. There also a
+The application is password protected, with a default password of 'foo-bar'. Upon first
+login, once you have enter the password successfully, the system will download data 
+from the website and cleanse this data for presentation. The solution is menu driven,
+and selection from the menu to display the data in tabular format. There also a
 capability of searching the data detail and display the content of the breaches. Lastly,
 there is an Administrative sectin that will allow you to refresh the downloaded data, reset
 your password, or reset the environment.
