@@ -3,7 +3,6 @@
 # Purpose      : Password Complexity Checker.
 # Filename     : passwordComplexity.sh
 # Date Created : 19-Aug-2023
-# Date Modified: 19-Aug-2023
 # Author       : Joe Velardi
 
 

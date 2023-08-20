@@ -3,7 +3,6 @@
 # Purpose      : Display Data in Table Format.
 # Filename     : displayDetail.sh
 # Date Created : 19-Aug-2023
-# Date Modified: 19-Aug-2023
 # Author       : Joe Velardi
 
 

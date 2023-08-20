@@ -3,7 +3,6 @@
 # Purpose      : Sub-Menu to Display Admin Tasks.
 # Filename     : menuAdmin.sh
 # Date Created : 13-Aug-2023
-# Date Modified: 13-Aug-2023
 # Author       : Joe Velardi
 
 
@@ -63,6 +62,7 @@ do
 
 		[3] )
 			echo -e $defaultPassword > $secretPassword
+			rm -f $dataSource
 			echo -e "\n  Environment Has Been Reset ..." && sleep 2 ;;
 
 		[9] )

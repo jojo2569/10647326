@@ -3,7 +3,6 @@
 # Purpose      : Cleanse Downloaded Data.
 # Filename     : cleanseData.sh
 # Date Created : 12-Aug-2023
-# Date Modified: 12-Aug-2023
 # Author       : Joe Velardi
 
 

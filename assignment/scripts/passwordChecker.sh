@@ -3,7 +3,6 @@
 # Purpose      : Password Validation Routines.
 # Filename     : passwordChecker.sh
 # Date Created : 13-Aug-2023
-# Date Modified: 13-Aug-2023
 # Author       : Joe Velardi
 
 

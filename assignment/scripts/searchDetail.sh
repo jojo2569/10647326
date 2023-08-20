@@ -3,7 +3,6 @@
 # Purpose      : Searches PWNED Website Data and Returns Results.
 # Filename     : searchDetail.sh
 # Date Created : 17-Aug-2023
-# Date Modified: 17-Aug-2023
 # Author       : Joe Velardi
 
 

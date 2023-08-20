@@ -3,7 +3,6 @@
 # Purpose      : Download Web Data.
 # Filename     : downloadData.sh
 # Date Created : 12-Aug-2023
-# Date Modified: 13-Aug-2023
 # Author       : Joe Velardi
 
 
@@ -52,8 +51,7 @@ downloadData() {
         promptPressEnter
 
     else
-        echo -e "\n${RED}  Invalid URL ...${NORMAL}\n"
-        sleep 2
+        echo -e "\n${RED}  Invalid URL ...${NORMAL}\n" && sleep 2
     fi
 
 }

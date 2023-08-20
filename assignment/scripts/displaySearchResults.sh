@@ -3,7 +3,6 @@
 # Purpose      : Display Data in a List Format.
 # Filename     : displayDataList.sh
 # Date Created : 19-Aug-2023
-# Date Modified: 19-Aug-2023
 # Author       : Joe Velardi
 
 
